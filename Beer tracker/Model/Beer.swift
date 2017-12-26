@@ -1,24 +1,19 @@
-class Beer {
+class Beer:Rateable {
     
-    enum Kleur: String {
+    enum Color: String {
         case blond = "Blond"
-        case blondbruin = "Blond/Bruin"
-        case bruin = "Bruin"
+        case blondbrown = "Blond/Brown"
+        case brown = "Brown"
     }
     
-    var naam:String
-    var brouwer:String
-    var kleur:Kleur
+    var brewer:String
+    var color:Color
     var alcoholPercentage:Double
-    var rating:Int
-    var favoriet:Bool
     
-    init(naam: String, brouwer: String, kleur: Kleur, alcoholPercentage: Double, rating: Int, favoriet: Bool) {
-        self.naam = naam
-        self.brouwer = brouwer
-        self.kleur = kleur
+    init(name: String, rating:Int, favorite:Bool, brewer: String, color: Color, alcoholPercentage: Double) {
+        self.brewer = brewer
+        self.color = color
         self.alcoholPercentage = alcoholPercentage
-        self.rating = rating
-        self.favoriet = favoriet
+        super.init(name: name, rating: rating, favorite: favorite)
     }
 }

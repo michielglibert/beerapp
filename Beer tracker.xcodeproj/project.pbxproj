@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		C72091C91FF18AD40026227B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72091C81FF18AD40026227B /* AppDelegate.swift */; };
-		C72091CB1FF18AD40026227B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72091CA1FF18AD40026227B /* ViewController.swift */; };
 		C72091CE1FF18AD40026227B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C72091CC1FF18AD40026227B /* Main.storyboard */; };
 		C72091D01FF18AD40026227B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C72091CF1FF18AD40026227B /* Assets.xcassets */; };
 		C72091D31FF18AD40026227B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C72091D11FF18AD40026227B /* LaunchScreen.storyboard */; };
@@ -19,7 +18,6 @@
 /* Begin PBXFileReference section */
 		C72091C51FF18AD30026227B /* Beer tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Beer tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C72091C81FF18AD40026227B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C72091CA1FF18AD40026227B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C72091CD1FF18AD40026227B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C72091CF1FF18AD40026227B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C72091D21FF18AD40026227B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -62,7 +60,6 @@
 				C72091DB1FF18DC90026227B /* Views */,
 				C72091DA1FF18DC40026227B /* Model */,
 				C72091C81FF18AD40026227B /* AppDelegate.swift */,
-				C72091CA1FF18AD40026227B /* ViewController.swift */,
 				C72091CC1FF18AD40026227B /* Main.storyboard */,
 				C72091CF1FF18AD40026227B /* Assets.xcassets */,
 				C72091D11FF18AD40026227B /* LaunchScreen.storyboard */,
@@ -166,7 +163,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C72091CB1FF18AD40026227B /* ViewController.swift in Sources */,
 				C72091DE1FF191280026227B /* Beer.swift in Sources */,
 				C72091E01FF1913D0026227B /* Location.swift in Sources */,
 				C72091C91FF18AD40026227B /* AppDelegate.swift in Sources */,

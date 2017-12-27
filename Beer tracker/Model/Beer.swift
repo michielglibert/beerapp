@@ -1,11 +1,5 @@
 class Beer:Rateable {
-    
-    enum Color: String {
-        case blond = "Blond"
-        case blondbrown = "Blond/Brown"
-        case brown = "Brown"
-    }
-    
+
     var brewer:String
     var color:Color
     var alcoholPercentage:Double
@@ -17,3 +11,4 @@ class Beer:Rateable {
         super.init(name: name, rating: rating, favorite: favorite)
     }
 }
+

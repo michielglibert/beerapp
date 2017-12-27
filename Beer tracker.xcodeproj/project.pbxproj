@@ -16,6 +16,10 @@
 		C7D859C91FF2B8D200A4C1B2 /* Rateable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D859C81FF2B8D200A4C1B2 /* Rateable.swift */; };
 		C7D859CB1FF2C32F00A4C1B2 /* BeersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D859CA1FF2C32F00A4C1B2 /* BeersViewController.swift */; };
 		C7D859CD1FF2C42900A4C1B2 /* BeerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D859CC1FF2C42900A4C1B2 /* BeerCell.swift */; };
+		C7DE1D221FF3AC93005B202A /* AddBeerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DE1D211FF3AC93005B202A /* AddBeerViewController.swift */; };
+		C7DE1D241FF3EF77005B202A /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DE1D231FF3EF77005B202A /* Color.swift */; };
+		C7DE1D261FF4007B005B202A /* BeerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DE1D251FF4007B005B202A /* BeerViewController.swift */; };
+		C7E039C11FF4229C00D9175F /* PrimarySplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E039C01FF4229C00D9175F /* PrimarySplitViewController.swift */; };
 		C7F94AEF1FF2B75400A7542A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F94AEE1FF2B75400A7542A /* User.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +35,10 @@
 		C7D859C81FF2B8D200A4C1B2 /* Rateable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rateable.swift; sourceTree = "<group>"; };
 		C7D859CA1FF2C32F00A4C1B2 /* BeersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeersViewController.swift; sourceTree = "<group>"; };
 		C7D859CC1FF2C42900A4C1B2 /* BeerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerCell.swift; sourceTree = "<group>"; };
+		C7DE1D211FF3AC93005B202A /* AddBeerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBeerViewController.swift; sourceTree = "<group>"; };
+		C7DE1D231FF3EF77005B202A /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		C7DE1D251FF4007B005B202A /* BeerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerViewController.swift; sourceTree = "<group>"; };
+		C7E039C01FF4229C00D9175F /* PrimarySplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimarySplitViewController.swift; sourceTree = "<group>"; };
 		C7F94AEE1FF2B75400A7542A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,6 +91,7 @@
 				C72091DF1FF1913D0026227B /* Location.swift */,
 				C7F94AEE1FF2B75400A7542A /* User.swift */,
 				C7D859C81FF2B8D200A4C1B2 /* Rateable.swift */,
+				C7DE1D231FF3EF77005B202A /* Color.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -99,6 +108,9 @@
 			isa = PBXGroup;
 			children = (
 				C7D859CA1FF2C32F00A4C1B2 /* BeersViewController.swift */,
+				C7DE1D211FF3AC93005B202A /* AddBeerViewController.swift */,
+				C7DE1D251FF4007B005B202A /* BeerViewController.swift */,
+				C7E039C01FF4229C00D9175F /* PrimarySplitViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -175,13 +187,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7DE1D261FF4007B005B202A /* BeerViewController.swift in Sources */,
+				C7E039C11FF4229C00D9175F /* PrimarySplitViewController.swift in Sources */,
 				C7D859C91FF2B8D200A4C1B2 /* Rateable.swift in Sources */,
 				C7F94AEF1FF2B75400A7542A /* User.swift in Sources */,
 				C7D859CD1FF2C42900A4C1B2 /* BeerCell.swift in Sources */,
 				C7D859CB1FF2C32F00A4C1B2 /* BeersViewController.swift in Sources */,
+				C7DE1D221FF3AC93005B202A /* AddBeerViewController.swift in Sources */,
 				C72091DE1FF191280026227B /* Beer.swift in Sources */,
 				C72091E01FF1913D0026227B /* Location.swift in Sources */,
 				C72091C91FF18AD40026227B /* AppDelegate.swift in Sources */,
+				C7DE1D241FF3EF77005B202A /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

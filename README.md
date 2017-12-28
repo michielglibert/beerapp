@@ -4,19 +4,4 @@ This application is made for a school project, you a free to use this for any pu
 
 ## Running the app
 
-The app uses CocoaPods for dependencies. If you do not have cocoapods yet use this:
-
-```
-sudo gem install cocoapods
-```
-
-After you have installed cocoapods, navigate to the project directory and run this:
-
-```
-pod install
-```
-
-The project should run now as the dependencies have been installed. For any issues you can refer to the cocoapods website: https://cocoapods.org/
-
-## Dependencies
-* SwinInject (https://github.com/Swinject/Swinject)
+The app does not have any dependencies so it should run without any issues. Xcode 9 was used and the app was developed in ios 11

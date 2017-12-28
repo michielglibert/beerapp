@@ -26,27 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Beer tracker/ViewControllers/BeersViewController.swift"
-            timestampString = "536183481.284075"
+            timestampString = "536190167.799208"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
-            landmarkName = "unknown"
-            landmarkType = "0">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Beer tracker/ViewControllers/BeersViewController.swift"
-            timestampString = "536183481.284411"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
             landmarkName = "BeersViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -57,14 +41,30 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Beer tracker/ViewControllers/PrimarySplitViewController.swift"
-            timestampString = "536114827.336595"
+            filePath = "Beer tracker/ViewControllers/BeersViewController.swift"
+            timestampString = "536190167.799541"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "17"
-            endingLineNumber = "17"
-            landmarkName = "PrimarySplitViewController"
-            landmarkType = "3">
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "prepare(for:sender:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Beer tracker/ViewControllers/PrimarySplitViewController.swift"
+            timestampString = "536190167.799743"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "splitViewController(_:collapseSecondary:onto:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Beer tracker/ViewControllers/BeersViewController.swift"
-            timestampString = "536183481.284674"
+            timestampString = "536190167.799782"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
             landmarkName = "unwindFromAddBeer(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Beer tracker/ViewControllers/AddBeerViewController.swift"
-            timestampString = "536183481.284904"
+            timestampString = "536190167.800002"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
             landmarkName = "textFieldShouldReturn(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -106,11 +106,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Beer tracker/ViewControllers/AddBeerViewController.swift"
-            timestampString = "536183481.285177"
+            timestampString = "536190167.800046"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
             landmarkName = "textFieldShouldReturn(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -186,11 +186,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Beer tracker/ViewControllers/AddBeerViewController.swift"
-            timestampString = "536183481.28547"
+            timestampString = "536190167.800128"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
             landmarkName = "prepare(for:sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -202,11 +202,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Beer tracker/ViewControllers/BeerViewController.swift"
-            timestampString = "536183481.285713"
+            timestampString = "536190167.800171"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
             landmarkName = "unwindFromAddBeer(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -218,13 +218,109 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Beer tracker/ViewControllers/BeerViewController.swift"
-            timestampString = "536183481.285972"
+            timestampString = "536190167.80021"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "updateView()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Beer tracker/ViewControllers/BeersViewController.swift"
+            timestampString = "536190167.800248"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
+            landmarkName = "unwindFromBeer(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Beer_tracker.BeersViewController.unwindFromBeer(__ObjC.UIStoryboardSegue) -&gt; ()"
+                  moduleName = "Beer tracker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/michielglibert/Documents/Examen/beerapp/Beer%20tracker/ViewControllers/BeersViewController.swift"
+                  timestampString = "536189987.230969"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "62"
+                  endingLineNumber = "62"
+                  offsetFromSymbolStart = "1882">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Beer_tracker.BeersViewController.unwindFromBeer(__ObjC.UIStoryboardSegue) -&gt; ()"
+                  moduleName = "Beer tracker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/michielglibert/Documents/Examen/beerapp/Beer%20tracker/ViewControllers/BeersViewController.swift"
+                  timestampString = "536189987.232827"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "62"
+                  endingLineNumber = "62"
+                  offsetFromSymbolStart = "2048">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Beer tracker/ViewControllers/BeersViewController.swift"
+            timestampString = "536190167.800429"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "37"
             endingLineNumber = "37"
-            landmarkName = "updateView()"
+            landmarkName = "viewWillAppear(_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Beer_tracker.BeersViewController.viewWillAppear(Swift.Bool) -&gt; ()"
+                  moduleName = "Beer tracker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/michielglibert/Documents/Examen/beerapp/Beer%20tracker/ViewControllers/BeersViewController.swift"
+                  timestampString = "536190012.141377"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "570">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Beer_tracker.Beer) -&gt; Swift.Bool in Beer_tracker.BeersViewController.viewWillAppear(Swift.Bool) -&gt; ()"
+                  moduleName = "Beer tracker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/michielglibert/Documents/Examen/beerapp/Beer%20tracker/ViewControllers/BeersViewController.swift"
+                  timestampString = "536190012.143547"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "14">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

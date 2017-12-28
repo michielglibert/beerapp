@@ -19,6 +19,7 @@ class BeersViewController:UIViewController {
             beers = beerService.getBeers()
             break
         case "Favorites"?:
+            //Makes sure that the add button is removed if in the favorites tab
             self.navigationItem.rightBarButtonItems = nil
             beers = beerService.getBeers().filter({$0.favorite == true})
             break
@@ -31,6 +32,7 @@ class BeersViewController:UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        //Checks the title and filters the beers if true
         if title == "Favorites" {
             beers = beerService.getBeers().filter({$0.favorite == true})
         }
@@ -41,11 +43,24 @@ class BeersViewController:UIViewController {
     
     @IBAction func unwindFromAddBeer(_ segue: UIStoryboardSegue) {
         switch segue.identifier {
+        //If beer was added wil refer to this controller, will refer to other controller for edited
         case "beerEditedOrAdded"?:
             let addBeerViewController = segue.source as! AddBeerViewController
             beerService.addBeer(beer: addBeerViewController.beer!)
             beers = beerService.getBeers()
             tableView.insertRows(at: [IndexPath(row: beers.count - 1, section: 0)], with: .automatic)
+        default:
+            fatalError("Unknown segue")
+        }
+    }
+    
+    @IBAction func unwindFromBeer(_ segue: UIStoryboardSegue) {
+        switch segue.identifier {
+        case "didRemoveBeer"?:
+            let beerViewController = segue.source as! BeerViewController
+            beerService.removeBeer(beer: beerViewController.beer)
+            beers = beerService.getBeers()
+            tableView.reloadData()
         default:
             fatalError("Unknown segue")
         }
@@ -59,7 +74,7 @@ class BeersViewController:UIViewController {
             let beerViewController = (segue.destination as! UINavigationController).topViewController as! BeerViewController
             let selection = tableView.indexPathForSelectedRow!
             beerViewController.beer = beers[selection.row]
-            //Titel wordt hier al gedefinieerd zodat hij niet plots tevoorschijn komt
+            //Title is defined here so it doesn't randomly pop-up when loading the view
             beerViewController.title = beerViewController.beer.name
             tableView.deselectRow(at: selection, animated: true)
             break
@@ -99,7 +114,21 @@ extension BeersViewController: UISearchBarDelegate {
         tableView.reloadData()
     }
     
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBar.showsCancelButton = true
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.text = ""
+        searchBar.showsCancelButton = false
+        searchBar.endEditing(true)
+        
+        beers = beerService.getBeers()
+        tableView.reloadData()
+    }
+    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.showsCancelButton = false
         searchBar.endEditing(true)
     }
 }

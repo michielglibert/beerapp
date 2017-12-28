@@ -16,7 +16,8 @@ class AddBeerViewController:UITableViewController {
         super.viewDidLoad()
         
         if let beer = beer {
-            title = beer.name
+            title = "Edit beer"
+            
             name.text = beer.name
             brewer.text = beer.brewer
             alcoholPercentage.text = String(beer.alcoholPercentage)
@@ -27,6 +28,8 @@ class AddBeerViewController:UITableViewController {
         let collection = [name, brewer, alcoholPercentage, color]
         var counter = 0
         
+        //Sets the delegate and adds a tag for each textfield
+        //Done for the method textFieldShouldReturn()
         collection.forEach { field in
             field?.delegate = self
             field?.tag = counter
@@ -46,10 +49,6 @@ class AddBeerViewController:UITableViewController {
         }
     }
     
-    @IBAction func hideKeyboard(_ sender: UITextField) {
-        sender.resignFirstResponder()
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if beer == nil {
             beer = Beer(name: name.text!, rating: Int(rating.rating), favorite: false, brewer: brewer.text!, color: Color(rawValue: color.text!)!, alcoholPercentage: Double(alcoholPercentage.text!)!)
@@ -62,12 +61,19 @@ class AddBeerViewController:UITableViewController {
         }
     }
     
+    //Creates a picker for the textfield
     func createBeerPicker() {
         let colorPicker = UIPickerView()
         colorPicker.delegate = self
         color.inputView = colorPicker
     }
     
+    //When tapped the textfield shows it's initial value
+    @IBAction func showText() {
+        color.text = Color.blond.rawValue
+    }
+    
+    //Adds toolbar to picker
     func createToolbar() {
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
@@ -105,10 +111,12 @@ extension AddBeerViewController: UIPickerViewDataSource, UIPickerViewDelegate {
         color.text = selectedColor?.rawValue
     }
     
+    
 }
 
 //source: https://stackoverflow.com/questions/31766896/switching-between-text-fields-on-pressing-return-key-in-swift
 extension AddBeerViewController: UITextFieldDelegate {
+    //Method checks the next field when return is pressed
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if let nextField = textField.superview?.superview?.superview?.viewWithTag(textField.tag + 1) as? UITextField {
             nextField.becomeFirstResponder()
@@ -118,6 +126,7 @@ extension AddBeerViewController: UITextFieldDelegate {
         return false
     }
     
+    //Makes it so the textfield with tag 2 only allows numbers as input
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool
     {
         if textField.tag == 2 {

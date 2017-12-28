@@ -1,5 +1,7 @@
 import UIKit
 
+//Source: https://stackoverflow.com/questions/29506713/open-uisplitviewcontroller-to-master-view-rather-than-detail
+//Method fixes an issue where detail would show instead of master view with UISplitView
 class PrimarySplitViewController: UISplitViewController,
 UISplitViewControllerDelegate {
     

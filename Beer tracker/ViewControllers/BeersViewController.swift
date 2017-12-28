@@ -5,24 +5,39 @@ class BeersViewController:UIViewController {
     @IBOutlet weak var tableView:UITableView!
     @IBOutlet weak var searchBar:UISearchBar!
     
-    var beers: [Beer] = [
-        Beer(name: "Duvel", rating: 4, favorite: true, brewer: "Duvel moortgat", color: Color.blond, alcoholPercentage: 8.5),
-        Beer(name: "Jupiler", rating: 5, favorite: false, brewer: "AB Inbev", color: Color.blond, alcoholPercentage: 5.2)
-    ]
+    var beerService = BeerService()
+    var beers = [Beer]()
     
-    var currentBeers = [Beer]()
-    private var collapseDetailViewController = true
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+
+    }
     
     override func viewDidLoad() {
-        currentBeers = beers
+        self.navigationItem.title = parent?.parent?.parent?.restorationIdentifier
+        title = parent?.parent?.parent?.restorationIdentifier
+        
+        switch title {
+        case "Beers"?:
+            beers = beerService.getBeers()
+            break
+        case "Favorites"?:
+            self.navigationItem.rightBarButtonItems = nil
+            beers = beerService.getBeers().filter({$0.favorite == true})
+            break
+        default:
+            fatalError("Unknown identifier")
+        }
+        
     }
     
     @IBAction func unwindFromAddBeer(_ segue: UIStoryboardSegue) {
         switch segue.identifier {
         case "addBeer"?:
             let addBeerViewController = segue.source as! AddBeerViewController
-            beers.append(addBeerViewController.beer!)
-            currentBeers = beers
+            beerService.addBeer(beer: addBeerViewController.beer!)
+            beers = beerService.getBeers()
             tableView.insertRows(at: [IndexPath(row: beers.count - 1, section: 0)], with: .automatic)
         default:
             fatalError("Unknown segue")
@@ -48,12 +63,6 @@ class BeersViewController:UIViewController {
     }
 }
 
-extension BeersViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        collapseDetailViewController = false
-    }
-}
-
 extension BeersViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -61,12 +70,12 @@ extension BeersViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return currentBeers.count
+        return beers.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "beerCell", for: indexPath) as! BeerCell
-        cell.beer = currentBeers[indexPath.row]
+        cell.beer = beers[indexPath.row]
         return cell
     }
 }
@@ -74,9 +83,9 @@ extension BeersViewController: UITableViewDataSource {
 extension BeersViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText.isEmpty {
-            currentBeers = beers
+            beers = beerService.getBeers()
         } else {
-            currentBeers = beers.filter({ (beer) -> Bool in
+            beers = beerService.getBeers().filter({ (beer) -> Bool in
                 return beer.name.contains(searchText)
             })
         }

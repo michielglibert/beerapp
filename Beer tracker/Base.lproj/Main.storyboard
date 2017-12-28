@@ -481,13 +481,30 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5e3-WC-bil" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Gjw-Z0-woe" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3758" y="-1128"/>
+            <point key="canvasLocation" x="3886" y="-1128"/>
+        </scene>
+        <!--Beers-->
+        <scene sceneID="XNN-WZ-Pw5">
+            <objects>
+                <navigationController storyboardIdentifier="Beers" useStoryboardIdentifierAsRestorationIdentifier="YES" navigationBarHidden="YES" id="c7U-Mv-dGj" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Beers" id="sUK-it-H3k"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="XVe-pT-zaI">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="jvU-zF-eBD" kind="relationship" relationship="rootViewController" id="qs2-qD-FfS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cRN-wx-kZG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="428" y="-683"/>
         </scene>
         <!--Beers-->
         <scene sceneID="0Iq-qJ-74o">
             <objects>
                 <splitViewController title="Beers" id="jvU-zF-eBD" customClass="PrimarySplitViewController" customModule="Beer_tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Beers" id="zWh-lS-sJ9"/>
+                    <navigationItem key="navigationItem" id="QGd-Rk-f5u"/>
                     <connections>
                         <segue destination="Kxm-Ct-7W7" kind="relationship" relationship="masterViewController" id="V1j-k5-lwT"/>
                         <segue destination="nrC-hK-xF3" kind="relationship" relationship="detailViewController" id="MXN-J0-uSr"/>
@@ -507,14 +524,14 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="jvU-zF-eBD" kind="relationship" relationship="viewControllers" id="FCK-Z4-ETT"/>
                         <segue destination="uWp-Yi-C6B" kind="relationship" relationship="viewControllers" id="NpI-Rk-bQN"/>
                         <segue destination="4yC-Lr-S6K" kind="relationship" relationship="viewControllers" id="MeH-6z-9iG"/>
+                        <segue destination="c7U-Mv-dGj" kind="relationship" relationship="viewControllers" id="hvq-Je-CeH"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hco-O8-ReY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="428" y="-18"/>
+            <point key="canvasLocation" x="-530" y="-304"/>
         </scene>
         <!--Profile-->
         <scene sceneID="vhk-C3-Q6A">
@@ -530,41 +547,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fPd-Eo-6qc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="428" y="1211"/>
-        </scene>
-        <!--Locations-->
-        <scene sceneID="OyI-sL-0Xr">
-            <objects>
-                <tableViewController title="Locations" id="0yn-CM-6B3" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="1W3-Fn-qe9">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" id="t91-s2-oOp">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </searchBar>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="vDA-ia-575">
-                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vDA-ia-575" id="dlQ-Vr-HgW">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="0yn-CM-6B3" id="DsJ-ax-Wwm"/>
-                            <outlet property="delegate" destination="0yn-CM-6B3" id="WJw-C5-hlr"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Favorites" id="D6P-Tn-kck"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="f6C-et-jNq" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2212" y="546"/>
+            <point key="canvasLocation" x="-530" y="569"/>
         </scene>
         <!--Beers-->
         <scene sceneID="r6S-J2-T9Y">
@@ -591,21 +574,20 @@
         <!--Navigation Controller-->
         <scene sceneID="klP-Wy-k1X">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uWp-Yi-C6B" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="Favorites" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" navigationBarHidden="YES" id="uWp-Yi-C6B" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="favorites" id="xDw-xe-YkK"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ozl-Er-09P">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="0yn-CM-6B3" kind="relationship" relationship="rootViewController" id="HxT-Mn-PeC"/>
+                        <segue destination="jvU-zF-eBD" kind="relationship" relationship="rootViewController" id="rn6-RA-P6c"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ph1-or-ZHt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1376" y="546.9265367316342"/>
+            <point key="canvasLocation" x="428" y="85"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="iGO-Bf-OlG">
@@ -646,6 +628,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="rn6-RA-P6c"/>
         <segue reference="ZTY-4F-lQl"/>
     </inferredMetricsTieBreakers>
 </document>

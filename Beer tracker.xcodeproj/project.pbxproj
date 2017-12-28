@@ -13,6 +13,9 @@
 		C72091D31FF18AD40026227B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C72091D11FF18AD40026227B /* LaunchScreen.storyboard */; };
 		C72091DE1FF191280026227B /* Beer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72091DD1FF191280026227B /* Beer.swift */; };
 		C72091E01FF1913D0026227B /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72091DF1FF1913D0026227B /* Location.swift */; };
+		C74C92421FF4651700E1ED34 /* CosmosDistrib.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74C92411FF4651700E1ED34 /* CosmosDistrib.swift */; };
+		C74C92441FF4729100E1ED34 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74C92431FF4729100E1ED34 /* FavoritesViewController.swift */; };
+		C74C92461FF472A100E1ED34 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74C92451FF472A100E1ED34 /* ProfileViewController.swift */; };
 		C7D859C91FF2B8D200A4C1B2 /* Rateable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D859C81FF2B8D200A4C1B2 /* Rateable.swift */; };
 		C7D859CB1FF2C32F00A4C1B2 /* BeersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D859CA1FF2C32F00A4C1B2 /* BeersViewController.swift */; };
 		C7D859CD1FF2C42900A4C1B2 /* BeerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D859CC1FF2C42900A4C1B2 /* BeerCell.swift */; };
@@ -32,6 +35,9 @@
 		C72091D41FF18AD40026227B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C72091DD1FF191280026227B /* Beer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Beer.swift; sourceTree = "<group>"; };
 		C72091DF1FF1913D0026227B /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		C74C92411FF4651700E1ED34 /* CosmosDistrib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmosDistrib.swift; sourceTree = "<group>"; };
+		C74C92431FF4729100E1ED34 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		C74C92451FF472A100E1ED34 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		C7D859C81FF2B8D200A4C1B2 /* Rateable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rateable.swift; sourceTree = "<group>"; };
 		C7D859CA1FF2C32F00A4C1B2 /* BeersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeersViewController.swift; sourceTree = "<group>"; };
 		C7D859CC1FF2C42900A4C1B2 /* BeerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerCell.swift; sourceTree = "<group>"; };
@@ -100,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				C7D859CC1FF2C42900A4C1B2 /* BeerCell.swift */,
+				C74C92411FF4651700E1ED34 /* CosmosDistrib.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -111,6 +118,8 @@
 				C7DE1D211FF3AC93005B202A /* AddBeerViewController.swift */,
 				C7DE1D251FF4007B005B202A /* BeerViewController.swift */,
 				C7E039C01FF4229C00D9175F /* PrimarySplitViewController.swift */,
+				C74C92431FF4729100E1ED34 /* FavoritesViewController.swift */,
+				C74C92451FF472A100E1ED34 /* ProfileViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -187,9 +196,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C74C92441FF4729100E1ED34 /* FavoritesViewController.swift in Sources */,
 				C7DE1D261FF4007B005B202A /* BeerViewController.swift in Sources */,
 				C7E039C11FF4229C00D9175F /* PrimarySplitViewController.swift in Sources */,
 				C7D859C91FF2B8D200A4C1B2 /* Rateable.swift in Sources */,
+				C74C92461FF472A100E1ED34 /* ProfileViewController.swift in Sources */,
 				C7F94AEF1FF2B75400A7542A /* User.swift in Sources */,
 				C7D859CD1FF2C42900A4C1B2 /* BeerCell.swift in Sources */,
 				C7D859CB1FF2C32F00A4C1B2 /* BeersViewController.swift in Sources */,
@@ -198,6 +209,7 @@
 				C72091E01FF1913D0026227B /* Location.swift in Sources */,
 				C72091C91FF18AD40026227B /* AppDelegate.swift in Sources */,
 				C7DE1D241FF3EF77005B202A /* Color.swift in Sources */,
+				C74C92421FF4651700E1ED34 /* CosmosDistrib.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

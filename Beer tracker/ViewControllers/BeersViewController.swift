@@ -31,9 +31,9 @@ class BeersViewController:UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
-        case "addBeer":
+        case "addBeer"?:
             break;
-        case "editBeer":
+        case "editBeer"?:
             break;
         case "showBeer"?:
             let beerViewController = (segue.destination as! UINavigationController).topViewController as! BeerViewController
@@ -82,5 +82,9 @@ extension BeersViewController: UISearchBarDelegate {
         }
 
         tableView.reloadData()
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.endEditing(true)
     }
 }

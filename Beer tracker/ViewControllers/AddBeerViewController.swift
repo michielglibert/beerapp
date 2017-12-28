@@ -11,15 +11,6 @@ class AddBeerViewController:UITableViewController {
     var selectedColor:Color?
     var selectedRating:Int?
     
-    @IBAction func save() {
-        if beer == nil {
-            performSegue(withIdentifier: "addBeer", sender: self)
-        }
-    }
-    
-    @IBAction func hideKeyboard(_ sender: UITextField) {
-        sender.resignFirstResponder()
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +19,8 @@ class AddBeerViewController:UITableViewController {
             title = beer.name
             name.text = beer.name
             brewer.text = beer.brewer
+            alcoholPercentage.text = String(beer.alcoholPercentage)
+            color.text = beer.color.rawValue
             rating.rating = Double(beer.rating)
         }
         
@@ -43,6 +36,30 @@ class AddBeerViewController:UITableViewController {
         
         createBeerPicker()
         createToolbar()
+    }
+    
+    @IBAction func save() {
+        if beer == nil {
+            performSegue(withIdentifier: "addBeer", sender: self)
+        } else {
+            performSegue(withIdentifier: "editBeer", sender: self)
+        }
+    }
+    
+    @IBAction func hideKeyboard(_ sender: UITextField) {
+        sender.resignFirstResponder()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if beer == nil {
+            beer = Beer(name: name.text!, rating: Int(rating.rating), favorite: false, brewer: brewer.text!, color: Color(rawValue: color.text!)!, alcoholPercentage: Double(alcoholPercentage.text!)!)
+        } else {
+            beer?.name = name.text!
+            beer?.rating = Int(rating.rating)
+            beer?.brewer = brewer.text!
+            beer?.color = Color(rawValue: color.text!)!
+            beer?.alcoholPercentage = Double(alcoholPercentage.text!)!
+        }
     }
     
     func createBeerPicker() {
@@ -68,16 +85,6 @@ class AddBeerViewController:UITableViewController {
         view.endEditing(true)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        switch segue.identifier {
-        case "addBeer"?:
-            beer = Beer(name: name.text!, rating: Int(rating.rating), favorite: false, brewer: brewer.text!, color: Color.blond, alcoholPercentage: Double(alcoholPercentage.text!)!)
-        case "editBeer"?:
-            break;
-        default:
-            fatalError("Unknown segue")
-        }
-    }
 }
 
 extension AddBeerViewController: UIPickerViewDataSource, UIPickerViewDelegate {

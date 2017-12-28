@@ -227,7 +227,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="csj-Wx-UP6">
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="Afx-9B-pjT"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="Afx-9B-pjT">
+                            <connections>
+                                <segue destination="TSe-Nh-Y3j" kind="show" identifier="editBeer" id="Q6r-ET-Q5Z"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="alcoholPercentage" destination="Ofd-7s-Qay" id="11c-WW-8X3"/>
@@ -466,7 +470,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="L4E-jr-Ps7">
                             <connections>
                                 <action selector="save" destination="TSe-Nh-Y3j" id="HKc-nW-uwU"/>
-                                <segue destination="Gjw-Z0-woe" kind="unwind" identifier="addBeer" unwindAction="unwindFromAddBeer:" id="rzi-Qs-s0M"/>
+                                <segue destination="Gjw-Z0-woe" kind="unwind" identifier="beerEditedOrAdded" unwindAction="unwindFromAddBeer:" id="Dk3-u6-OuV"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -629,6 +633,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="rn6-RA-P6c"/>
+        <segue reference="xPt-OC-Yrv"/>
         <segue reference="ZTY-4F-lQl"/>
     </inferredMetricsTieBreakers>
 </document>

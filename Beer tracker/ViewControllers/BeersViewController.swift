@@ -8,11 +8,7 @@ class BeersViewController:UIViewController {
     var beerService = BeerService()
     var beers = [Beer]()
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-
-    }
+    private var indexPathToEdit: IndexPath!
     
     override func viewDidLoad() {
         self.navigationItem.title = parent?.parent?.parent?.restorationIdentifier
@@ -32,9 +28,20 @@ class BeersViewController:UIViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if title == "Favorites" {
+            beers = beerService.getBeers().filter({$0.favorite == true})
+        }
+        
+        tableView.reloadData()
+        
+    }
+    
     @IBAction func unwindFromAddBeer(_ segue: UIStoryboardSegue) {
         switch segue.identifier {
-        case "addBeer"?:
+        case "beerEditedOrAdded"?:
             let addBeerViewController = segue.source as! AddBeerViewController
             beerService.addBeer(beer: addBeerViewController.beer!)
             beers = beerService.getBeers()
@@ -47,9 +54,7 @@ class BeersViewController:UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
         case "addBeer"?:
-            break;
-        case "editBeer"?:
-            break;
+            break
         case "showBeer"?:
             let beerViewController = (segue.destination as! UINavigationController).topViewController as! BeerViewController
             let selection = tableView.indexPathForSelectedRow!
@@ -57,6 +62,7 @@ class BeersViewController:UIViewController {
             //Titel wordt hier al gedefinieerd zodat hij niet plots tevoorschijn komt
             beerViewController.title = beerViewController.beer.name
             tableView.deselectRow(at: selection, animated: true)
+            break
         default:
             fatalError("Unknown segue")
         }

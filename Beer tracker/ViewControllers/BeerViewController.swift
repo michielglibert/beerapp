@@ -12,10 +12,15 @@ class BeerViewController:UITableViewController {
     let beerService = BeerService()
     let formatter = DateFormatter()
     
+    override func viewDidAppear(_ animated: Bool) {
+        //If the person select the same beer on favorites and beers tab this makes sure that
+        //everything gets updated
+        updateView()
+    }
+    
     override func viewDidLoad() {
         updateView()
         rating.settings.updateOnTouch = false
-        favorite.isOn = beer.favorite
         favorite.addTarget(self, action: #selector(switchChanged), for: UIControlEvents.valueChanged)
     }
     
@@ -42,6 +47,9 @@ class BeerViewController:UITableViewController {
         actionSheet.addAction(removeAction)
         actionSheet.addAction(cancelAction)
         
+        //Ipad support
+        actionSheet.popoverPresentationController?.barButtonItem = self.navigationItem.rightBarButtonItem
+        
         self.present(actionSheet, animated: true, completion: nil)
     }
     
@@ -65,6 +73,7 @@ class BeerViewController:UITableViewController {
         color.text = beer.color.rawValue
         rating.rating = Double(beer.rating)
         formatter.dateFormat = "dd-MM-yyyy"
+        favorite.isOn = beer.favorite
         date.text = formatter.string(from: beer.dateAdded)
     }
     

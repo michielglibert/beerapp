@@ -6,11 +6,11 @@ class AddBeerViewController:UITableViewController {
     @IBOutlet weak var alcoholPercentage:UITextField!
     @IBOutlet weak var color:UITextField!
     @IBOutlet weak var rating:CosmosView!
+    @IBOutlet weak var saveButton:UIBarButtonItem!
     
     var beer:Beer?
     var selectedColor:Color?
     var selectedRating:Int?
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +23,7 @@ class AddBeerViewController:UITableViewController {
             alcoholPercentage.text = String(beer.alcoholPercentage)
             color.text = beer.color.rawValue
             rating.rating = Double(beer.rating)
+            saveButton.isEnabled = true
         }
         
         let collection = [name, brewer, alcoholPercentage, color]
@@ -47,6 +48,12 @@ class AddBeerViewController:UITableViewController {
         } else {
             performSegue(withIdentifier: "editBeer", sender: self)
         }
+        
+        name.text! = ""
+        brewer.text! = ""
+        alcoholPercentage.text! = ""
+        color.text! = ""
+        rating.rating = 0
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -111,12 +118,21 @@ extension AddBeerViewController: UIPickerViewDataSource, UIPickerViewDelegate {
         color.text = selectedColor?.rawValue
     }
     
+    func validate() {
+        if name.text!.count > 0 && brewer.text!.count > 0 && alcoholPercentage.text!.count > 0 && color.text!.count > 0 {
+            saveButton.isEnabled = true
+        } else {
+            saveButton.isEnabled = false
+        }
+        
+    }
+    
     
 }
 
-//source: https://stackoverflow.com/questions/31766896/switching-between-text-fields-on-pressing-return-key-in-swift
 extension AddBeerViewController: UITextFieldDelegate {
     //Method checks the next field when return is pressed
+    //source: https://stackoverflow.com/questions/31766896/switching-between-text-fields-on-pressing-return-key-in-swift
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if let nextField = textField.superview?.superview?.superview?.viewWithTag(textField.tag + 1) as? UITextField {
             nextField.becomeFirstResponder()
@@ -124,6 +140,10 @@ extension AddBeerViewController: UITextFieldDelegate {
             textField.resignFirstResponder()
         }
         return false
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        validate()
     }
     
     //Makes it so the textfield with tag 2 only allows numbers as input
@@ -134,6 +154,7 @@ extension AddBeerViewController: UITextFieldDelegate {
             let characterSet = CharacterSet(charactersIn: string)
             return allowedCharacters.isSuperset(of: characterSet)
         }
+        
         return true
     }
 }

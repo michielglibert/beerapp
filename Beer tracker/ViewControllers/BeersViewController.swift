@@ -14,29 +14,15 @@ class BeersViewController:UIViewController {
         self.navigationItem.title = parent?.parent?.parent?.restorationIdentifier
         title = parent?.parent?.parent?.restorationIdentifier
         
-        switch title {
-        case "Beers"?:
-            beers = beerService.getBeers()
-            break
-        case "Favorites"?:
-            //Makes sure that the add button is removed if in the favorites tab
+        if title == "Favorites" {
+            //Makes sure that the add button is removed
             self.navigationItem.rightBarButtonItems = nil
-            beers = beerService.getBeers().filter({$0.favorite == true})
-            break
-        default:
-            fatalError("Unknown identifier")
         }
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        //Checks the title and filters the beers if true
-        if title == "Favorites" {
-            beers = beerService.getBeers().filter({$0.favorite == true})
-        }
-        
+        beers = getBeersForView()
         tableView.reloadData()
         
     }
@@ -47,7 +33,7 @@ class BeersViewController:UIViewController {
         case "beerEditedOrAdded"?:
             let addBeerViewController = segue.source as! AddBeerViewController
             beerService.addBeer(beer: addBeerViewController.beer!)
-            beers = beerService.getBeers()
+            beers = getBeersForView()
             tableView.insertRows(at: [IndexPath(row: beers.count - 1, section: 0)], with: .automatic)
         default:
             fatalError("Unknown segue")
@@ -59,8 +45,9 @@ class BeersViewController:UIViewController {
         case "didRemoveBeer"?:
             let beerViewController = segue.source as! BeerViewController
             beerService.removeBeer(beer: beerViewController.beer)
-            beers = beerService.getBeers()
+            beers = getBeersForView()
             tableView.deleteRows(at: [IndexPath(row: beers.count - 1, section: 0)], with: .automatic)
+            break
         default:
             fatalError("Unknown segue")
         }
@@ -69,6 +56,8 @@ class BeersViewController:UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
         case "addBeer"?:
+            break
+        case "showDefault"?:
             break
         case "showBeer"?:
             let beerViewController = (segue.destination as! UINavigationController).topViewController as! BeerViewController
@@ -80,6 +69,17 @@ class BeersViewController:UIViewController {
             break
         default:
             fatalError("Unknown segue")
+        }
+    }
+    
+    func getBeersForView() -> [Beer] {
+        switch title {
+        case "Beers"?:
+            return beerService.getBeers()
+        case "Favorites"?:
+            return beerService.getBeers().filter({$0.favorite == true})
+        default:
+            fatalError("Unknown identifier")
         }
     }
 }
@@ -104,9 +104,9 @@ extension BeersViewController: UITableViewDataSource {
 extension BeersViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText.isEmpty {
-            beers = beerService.getBeers()
+            beers = getBeersForView()
         } else {
-            beers = beerService.getBeers().filter({ (beer) -> Bool in
+            beers = getBeersForView().filter({ (beer) -> Bool in
                 return beer.name.contains(searchText)
             })
         }
@@ -123,12 +123,20 @@ extension BeersViewController: UISearchBarDelegate {
         searchBar.showsCancelButton = false
         searchBar.endEditing(true)
         
-        beers = beerService.getBeers()
+        beers = getBeersForView()
         tableView.reloadData()
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.showsCancelButton = false
         searchBar.endEditing(true)
+    }
+}
+
+extension BeersViewController: UISplitViewControllerDelegate {
+    //Method so the view controller only collapses if there is no detail shown
+    func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
+        let isShowingBeers = (secondaryViewController as? UINavigationController)?.topViewController is BeersViewController
+        return !isShowingBeers
     }
 }

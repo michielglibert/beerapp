@@ -335,7 +335,7 @@
                     <navigationItem key="navigationItem" title="Beers" id="1oT-dg-Q6E">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="5x0-uY-6Wp">
                             <connections>
-                                <segue destination="TSe-Nh-Y3j" kind="show" identifier="addBeer" id="xPt-OC-Yrv"/>
+                                <segue destination="hT6-kX-KYg" kind="showDetail" identifier="addBeer" id="iIL-Kr-OA6"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -348,6 +348,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yis-PP-fD5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2996" y="-1128"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="rzY-B4-R9G">
+            <objects>
+                <navigationController id="hT6-kX-KYg" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="XOh-US-JD3">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="TSe-Nh-Y3j" kind="relationship" relationship="rootViewController" id="1oj-hu-Hb6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9hE-s4-w0U" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3951" y="-1128"/>
         </scene>
         <!--Add beer-->
         <scene sceneID="hUK-1X-iay">
@@ -485,7 +501,7 @@
                                                             <integer key="value" value="5"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="rating">
-                                                            <real key="value" value="0.0"/>
+                                                            <real key="value" value="1"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
@@ -507,7 +523,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Add beer" id="cSS-61-ugf">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="L4E-jr-Ps7">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="save" id="L4E-jr-Ps7">
                             <connections>
                                 <action selector="save" destination="TSe-Nh-Y3j" id="HKc-nW-uwU"/>
                                 <segue destination="Gjw-Z0-woe" kind="unwind" identifier="beerEditedOrAdded" unwindAction="unwindFromAddBeer:" id="Dk3-u6-OuV"/>
@@ -520,18 +536,20 @@
                         <outlet property="color" destination="L3i-8q-gcq" id="asE-vu-pGS"/>
                         <outlet property="name" destination="Skm-CC-zg1" id="Eci-6T-5dW"/>
                         <outlet property="rating" destination="v4i-ST-RNb" id="Bk6-Ps-Yr0"/>
+                        <outlet property="saveButton" destination="L4E-jr-Ps7" id="x69-yQ-Jd2"/>
+                        <segue destination="nrC-hK-xF3" kind="show" identifier="showDefault" id="dVX-Zh-9p3"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5e3-WC-bil" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Gjw-Z0-woe" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3886" y="-1128"/>
+            <point key="canvasLocation" x="4854" y="-1128"/>
         </scene>
         <!--Beers-->
         <scene sceneID="XNN-WZ-Pw5">
             <objects>
                 <navigationController storyboardIdentifier="Beers" useStoryboardIdentifierAsRestorationIdentifier="YES" navigationBarHidden="YES" id="c7U-Mv-dGj" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Beers" id="sUK-it-H3k"/>
+                    <tabBarItem key="tabBarItem" title="Beers" image="icons8-beer-filled" id="sUK-it-H3k"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="XVe-pT-zaI">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -580,18 +598,96 @@
         <!--Profile-->
         <scene sceneID="vhk-C3-Q6A">
             <objects>
-                <viewController id="4yC-Lr-S6K" sceneMemberID="viewController">
+                <viewController id="4yC-Lr-S6K" customClass="ProfileViewController" customModule="Beer_tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uKk-Z6-noI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleAspectFit" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="8C6-wQ-kLB">
+                                <rect key="frame" x="85" y="36" width="206" height="64"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="beer-mug-glass-drink-cocktail-emoj-symbol-babr-369f133aa5b11abf-512x512" translatesAutoresizingMaskIntoConstraints="NO" id="rl0-3r-GDL">
+                                        <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="64" id="JNP-5O-uSJ"/>
+                                            <constraint firstAttribute="width" constant="64" id="wc8-Em-QFU"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kgq-0C-qHr">
+                                        <rect key="frame" x="80" y="16.5" width="126" height="31.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="rl0-3r-GDL" firstAttribute="top" secondItem="8C6-wQ-kLB" secondAttribute="top" id="9AX-2H-l0l"/>
+                                    <constraint firstItem="rl0-3r-GDL" firstAttribute="leading" secondItem="8C6-wQ-kLB" secondAttribute="leading" id="bNn-KT-uEm"/>
+                                    <constraint firstAttribute="bottom" secondItem="rl0-3r-GDL" secondAttribute="bottom" id="fhc-6h-INp"/>
+                                    <constraint firstItem="rl0-3r-GDL" firstAttribute="centerY" secondItem="8C6-wQ-kLB" secondAttribute="centerY" id="iHj-fr-Qxq"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cBa-5w-Z6g">
+                                <rect key="frame" x="93.5" y="132" width="188.5" height="56"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="ERD-gr-wzD">
+                                        <rect key="frame" x="0.0" y="0.0" width="188.5" height="24"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total beers:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s49-pE-dq1">
+                                                <rect key="frame" x="0.0" y="0.0" width="126" height="24"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gFv-Ch-pec">
+                                                <rect key="frame" x="142" y="0.0" width="46.5" height="24"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="qls-xS-dlf">
+                                        <rect key="frame" x="0.0" y="32" width="188.5" height="24"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total favorites:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZmP-08-auX">
+                                                <rect key="frame" x="0.0" y="0.0" width="126" height="24"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mr4-mq-DoR">
+                                                <rect key="frame" x="142" y="0.0" width="46.5" height="24"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="s49-pE-dq1" firstAttribute="trailing" secondItem="ZmP-08-auX" secondAttribute="trailing" id="h7i-1q-Tot"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cBa-5w-Z6g" firstAttribute="top" secondItem="8C6-wQ-kLB" secondAttribute="bottom" constant="32" id="8MF-Pt-VXE"/>
+                            <constraint firstItem="8C6-wQ-kLB" firstAttribute="top" secondItem="uKk-Z6-noI" secondAttribute="topMargin" constant="16" id="bHd-ah-0k3"/>
+                            <constraint firstItem="8C6-wQ-kLB" firstAttribute="centerX" secondItem="uKk-Z6-noI" secondAttribute="centerX" id="m6N-8b-I6H"/>
+                            <constraint firstItem="cBa-5w-Z6g" firstAttribute="centerX" secondItem="uKk-Z6-noI" secondAttribute="centerX" id="yoQ-sh-sVj"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="d7L-ns-4ws"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" id="Ciy-j3-SQg"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="icons8-user-filled" id="Ciy-j3-SQg"/>
+                    <connections>
+                        <outlet property="beerAmountLabel" destination="gFv-Ch-pec" id="Dk6-L5-T4K"/>
+                        <outlet property="favoriteAmountLabel" destination="mr4-mq-DoR" id="An3-Xx-DT1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fPd-Eo-6qc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-530" y="569"/>
+            <point key="canvasLocation" x="-530.39999999999998" y="568.06596701649175"/>
         </scene>
         <!--Beers-->
         <scene sceneID="r6S-J2-T9Y">
@@ -671,7 +767,13 @@
             <point key="canvasLocation" x="2995.1999999999998" y="-1899.8500749625189"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="beer-mug-glass-drink-cocktail-emoj-symbol-babr-369f133aa5b11abf-512x512" width="256" height="256"/>
+        <image name="icons8-beer-filled" width="25" height="25"/>
+        <image name="icons8-user-filled" width="25" height="25"/>
+    </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="dVX-Zh-9p3"/>
         <segue reference="qs2-qD-FfS"/>
         <segue reference="ujv-Nd-Ahb"/>
         <segue reference="ZTY-4F-lQl"/>

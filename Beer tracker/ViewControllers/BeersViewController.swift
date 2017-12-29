@@ -60,7 +60,7 @@ class BeersViewController:UIViewController {
             let beerViewController = segue.source as! BeerViewController
             beerService.removeBeer(beer: beerViewController.beer)
             beers = beerService.getBeers()
-            tableView.reloadData()
+            tableView.deleteRows(at: [IndexPath(row: beers.count - 1, section: 0)], with: .automatic)
         default:
             fatalError("Unknown segue")
         }

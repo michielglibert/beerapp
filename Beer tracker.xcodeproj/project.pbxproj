@@ -16,7 +16,6 @@
 		C74C92421FF4651700E1ED34 /* CosmosDistrib.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74C92411FF4651700E1ED34 /* CosmosDistrib.swift */; };
 		C74C92461FF472A100E1ED34 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74C92451FF472A100E1ED34 /* ProfileViewController.swift */; };
 		C7D348CA1FF543A900874E79 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D348C91FF543A900874E79 /* UserService.swift */; };
-		C7D859C91FF2B8D200A4C1B2 /* Rateable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D859C81FF2B8D200A4C1B2 /* Rateable.swift */; };
 		C7D859CB1FF2C32F00A4C1B2 /* BeersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D859CA1FF2C32F00A4C1B2 /* BeersViewController.swift */; };
 		C7D859CD1FF2C42900A4C1B2 /* BeerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D859CC1FF2C42900A4C1B2 /* BeerCell.swift */; };
 		C7DE1D221FF3AC93005B202A /* AddBeerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DE1D211FF3AC93005B202A /* AddBeerViewController.swift */; };
@@ -40,7 +39,6 @@
 		C74C92411FF4651700E1ED34 /* CosmosDistrib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmosDistrib.swift; sourceTree = "<group>"; };
 		C74C92451FF472A100E1ED34 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		C7D348C91FF543A900874E79 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
-		C7D859C81FF2B8D200A4C1B2 /* Rateable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rateable.swift; sourceTree = "<group>"; };
 		C7D859CA1FF2C32F00A4C1B2 /* BeersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeersViewController.swift; sourceTree = "<group>"; };
 		C7D859CC1FF2C42900A4C1B2 /* BeerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerCell.swift; sourceTree = "<group>"; };
 		C7DE1D211FF3AC93005B202A /* AddBeerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBeerViewController.swift; sourceTree = "<group>"; };
@@ -101,7 +99,6 @@
 				C72091DD1FF191280026227B /* Beer.swift */,
 				C72091DF1FF1913D0026227B /* Location.swift */,
 				C7F94AEE1FF2B75400A7542A /* User.swift */,
-				C7D859C81FF2B8D200A4C1B2 /* Rateable.swift */,
 				C7DE1D231FF3EF77005B202A /* Color.swift */,
 			);
 			path = Model;
@@ -213,7 +210,6 @@
 				C7FA6F8C1FF53C5B004F8E13 /* DummyData.swift in Sources */,
 				C7DE1D261FF4007B005B202A /* BeerViewController.swift in Sources */,
 				C7E039C11FF4229C00D9175F /* PrimarySplitViewController.swift in Sources */,
-				C7D859C91FF2B8D200A4C1B2 /* Rateable.swift in Sources */,
 				C74C92461FF472A100E1ED34 /* ProfileViewController.swift in Sources */,
 				C7D348CA1FF543A900874E79 /* UserService.swift in Sources */,
 				C7F94AEF1FF2B75400A7542A /* User.swift in Sources */,

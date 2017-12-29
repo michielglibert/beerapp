@@ -218,6 +218,39 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="vfA-WD-fBK">
+                                        <rect key="frame" x="0.0" y="285" width="375" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vfA-WD-fBK" id="wjl-Be-GTy">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Muk-rw-FHZ">
+                                                    <rect key="frame" x="16" y="11" width="343" height="28"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Date added" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xc4-P7-3mo">
+                                                            <rect key="frame" x="0.0" y="0.0" width="306.5" height="28"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gy0-Fm-INb">
+                                                            <rect key="frame" x="306.5" y="0.0" width="36.5" height="28"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Muk-rw-FHZ" firstAttribute="leading" secondItem="wjl-Be-GTy" secondAttribute="leadingMargin" id="NgD-ff-Y5J"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Muk-rw-FHZ" secondAttribute="trailing" id="fX2-35-py7"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Muk-rw-FHZ" secondAttribute="bottom" id="hsW-X0-oCS"/>
+                                                <constraint firstItem="Muk-rw-FHZ" firstAttribute="top" secondItem="wjl-Be-GTy" secondAttribute="topMargin" id="kl7-eI-R6r"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -237,6 +270,7 @@
                         <outlet property="alcoholPercentage" destination="Ofd-7s-Qay" id="11c-WW-8X3"/>
                         <outlet property="brewer" destination="B7y-YH-ciW" id="TIZ-9u-m1X"/>
                         <outlet property="color" destination="PhI-4D-4fN" id="rqT-wS-rfO"/>
+                        <outlet property="date" destination="gy0-Fm-INb" id="c9g-lW-gFI"/>
                         <outlet property="favorite" destination="EbV-TE-Vqy" id="8WQ-dp-y1r"/>
                         <outlet property="rating" destination="qQy-rf-32C" id="pWW-lP-9to"/>
                         <segue destination="Qt8-tP-n0n" kind="unwind" identifier="didRemoveBeer" unwindAction="unwindFromBeer:" id="XZt-Tq-rPa"/>
@@ -273,7 +307,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eVC-SF-h5E">
-                                            <rect key="frame" x="16" y="11" width="317" height="33"/>
+                                            <rect key="frame" x="16" y="11" width="317" height="28"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>

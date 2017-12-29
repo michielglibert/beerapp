@@ -1,4 +1,4 @@
-class Location:Rateable {
+class Location {
     var street: String
     var number: String
     var place: String
@@ -9,6 +9,5 @@ class Location:Rateable {
         self.number = number
         self.place = place
         self.country = country
-        super.init(name: name, rating: rating, favorite: favorite)
     }
 }

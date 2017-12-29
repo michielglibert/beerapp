@@ -1,14 +1,23 @@
-class Beer:Rateable {
+import Foundation
 
+class Beer {
+
+    var name: String
+    var rating: Int
+    var favorite: Bool
     var brewer:String
     var color:Color
     var alcoholPercentage:Double
+    var dateAdded:Date
     
     init(name: String, rating:Int, favorite:Bool, brewer: String, color: Color, alcoholPercentage: Double) {
+        self.name = name
+        self.rating = rating
+        self.favorite = favorite
         self.brewer = brewer
         self.color = color
         self.alcoholPercentage = alcoholPercentage
-        super.init(name: name, rating: rating, favorite: favorite)
+        self.dateAdded = Date()
     }
 }
 

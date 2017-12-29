@@ -6,9 +6,11 @@ class BeerViewController:UITableViewController {
     @IBOutlet weak var color:UILabel!
     @IBOutlet weak var rating:CosmosView!
     @IBOutlet weak var favorite:UISwitch!
+    @IBOutlet weak var date:UILabel!
     
     var beer:Beer!
-    var beerService = BeerService()
+    let beerService = BeerService()
+    let formatter = DateFormatter()
     
     override func viewDidLoad() {
         updateView()
@@ -32,8 +34,13 @@ class BeerViewController:UITableViewController {
             self.performSegue(withIdentifier: "didRemoveBeer", sender: nil)
         }
         
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel) { (ACTION) in
+            
+        }
+        
         actionSheet.addAction(editAction)
         actionSheet.addAction(removeAction)
+        actionSheet.addAction(cancelAction)
         
         self.present(actionSheet, animated: true, completion: nil)
     }
@@ -57,6 +64,8 @@ class BeerViewController:UITableViewController {
         alcoholPercentage.text = String(beer.alcoholPercentage)
         color.text = beer.color.rawValue
         rating.rating = Double(beer.rating)
+        formatter.dateFormat = "dd-MM-yyyy"
+        date.text = formatter.string(from: beer.dateAdded)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

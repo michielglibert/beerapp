@@ -9,6 +9,7 @@ class AddBeerViewController:UITableViewController {
     @IBOutlet weak var saveButton:UIBarButtonItem!
     
     var beer:Beer?
+    var location:Location?
     var selectedColor:Color?
     var selectedRating:Int?
     
@@ -17,12 +18,12 @@ class AddBeerViewController:UITableViewController {
         
         if let beer = beer {
             title = "Edit beer"
-            
             name.text = beer.name
             brewer.text = beer.brewer
             alcoholPercentage.text = String(beer.alcoholPercentage)
             color.text = beer.color.rawValue
             rating.rating = Double(beer.rating)
+            location = beer.location
             saveButton.isEnabled = true
         }
         
@@ -44,7 +45,7 @@ class AddBeerViewController:UITableViewController {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(AddBeerViewController.dismissKeyboard))
         
         //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
-        //tap.cancelsTouchesInView = false
+        tap.cancelsTouchesInView = false
         
         view.addGestureRecognizer(tap)
         
@@ -54,27 +55,56 @@ class AddBeerViewController:UITableViewController {
     
     @IBAction func save() {
         if beer == nil {
-            performSegue(withIdentifier: "addBeer", sender: self)
+            if location == nil {
+                let alert = UIAlertController(title: "No location set", message: "Are you sure you want to add this beer without a location?", preferredStyle: .alert)
+            
+                let ok = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default) { (ACTION) in
+                    self.addBeer()
+                }
+            
+                let cancel = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil)
+            
+                alert.addAction(ok)
+                alert.addAction(cancel)
+            
+                self.present(alert, animated: true, completion: nil)
+            }
+            addBeer()
         } else {
-            performSegue(withIdentifier: "editBeer", sender: self)
+            performSegue(withIdentifier: "didEditBeer", sender: self)
         }
+    }
+    
+    func addBeer() {
+        self.performSegue(withIdentifier: "didAddBeer", sender: self)
         
-        name.text! = ""
-        brewer.text! = ""
-        alcoholPercentage.text! = ""
-        color.text! = ""
-        rating.rating = 0
+        self.name.text! = ""
+        self.brewer.text! = ""
+        self.alcoholPercentage.text! = ""
+        self.color.text! = ""
+        self.rating.rating = 0
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if beer == nil {
+        switch segue.identifier {
+        case "didAddBeer"?:
             beer = Beer(name: name.text!, rating: Int(rating.rating), favorite: false, brewer: brewer.text!, color: Color(rawValue: color.text!)!, alcoholPercentage: Double(alcoholPercentage.text!)!)
-        } else {
+            if location != nil {
+                beer?.location = location
+            }
+            break
+        case "didEditBeer"?:
             beer?.name = name.text!
             beer?.rating = Int(rating.rating)
             beer?.brewer = brewer.text!
             beer?.color = Color(rawValue: color.text!)!
             beer?.alcoholPercentage = Double(alcoholPercentage.text!)!
+            break
+        case "showMap"?:
+            break
+        default:
+            print(segue.identifier!)
+            fatalError("Unknown segue")
         }
     }
     
@@ -107,6 +137,20 @@ class AddBeerViewController:UITableViewController {
     
     @objc func dismissKeyboard() {
         view.endEditing(true)
+    }
+    
+    @IBAction func unwindFromAddLocation(_ segue: UIStoryboardSegue) {
+        switch segue.identifier {
+        case "didAddLocation"?:
+            let addLocationViewController = segue.source as! AddLocationViewController
+            location = addLocationViewController.location
+            let indexPath = IndexPath(row: 0, section: 5)
+            let cell = tableView.cellForRow(at: indexPath)
+            cell?.textLabel?.text = location?.name
+            break
+        default:
+            fatalError("Unknown segue")
+        }
     }
     
 }

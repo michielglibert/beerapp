@@ -1,13 +1,11 @@
 class Location {
-    var street: String
-    var number: String
-    var place: String
-    var country: String
+    var name:String
+    var latitude:Double
+    var longitude: Double
     
-    init(name: String, rating:Int, favorite:Bool, street: String, number: String, place: String, country: String) {
-        self.street = street
-        self.number = number
-        self.place = place
-        self.country = country
+    init(name: String, latitude: Double, longitude: Double) {
+        self.name = name
+        self.latitude = latitude
+        self.longitude = longitude
     }
 }

@@ -37,7 +37,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dQF-di-SZf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2989" y="-352"/>
+            <point key="canvasLocation" x="3473" y="83"/>
         </scene>
         <!--Beer View Controller-->
         <scene sceneID="d2Y-vG-HwF">
@@ -280,7 +280,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tts-A9-Egm" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Qt8-tP-n0n" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3885.5999999999999" y="-1900.2998500749627"/>
+            <point key="canvasLocation" x="4361" y="-1904"/>
         </scene>
         <!--Beers-->
         <scene sceneID="my1-ed-wI6">
@@ -290,7 +290,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" misplaced="YES" id="0Nw-eK-4VH">
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="0Nw-eK-4VH">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
@@ -347,7 +347,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yis-PP-fD5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2996" y="-1128"/>
+            <point key="canvasLocation" x="3473" y="-987"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rzY-B4-R9G">
@@ -363,20 +363,20 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9hE-s4-w0U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3951" y="-1128"/>
+            <point key="canvasLocation" x="4362" y="-988"/>
         </scene>
         <!--Add beer-->
         <scene sceneID="hUK-1X-iay">
             <objects>
                 <tableViewController title="Add beer" id="TSe-Nh-Y3j" customClass="AddBeerViewController" customModule="Beer_tracker" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="aLY-PZ-cXg">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="aLY-PZ-cXg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
                             <tableViewSection headerTitle="Naam" id="dcD-fr-H77">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="xTo-OL-k6C">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="xTo-OL-k6C">
                                         <rect key="frame" x="0.0" y="55.5" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xTo-OL-k6C" id="JDd-oA-QGC">
@@ -402,7 +402,7 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Brewer" id="U2M-Dr-8o7">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="ubD-Dv-hYY">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="ubD-Dv-hYY">
                                         <rect key="frame" x="0.0" y="161.5" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ubD-Dv-hYY" id="u0y-Ma-2bh">
@@ -428,7 +428,7 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Alcoholpercentage" id="wBB-Wb-dVy">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="ldS-PN-kA2">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="ldS-PN-kA2">
                                         <rect key="frame" x="0.0" y="267.5" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ldS-PN-kA2" id="WoK-vj-YHG">
@@ -454,7 +454,7 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Color" id="TGD-Fl-h83">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="CVn-0r-p7e">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="CVn-0r-p7e">
                                         <rect key="frame" x="0.0" y="373.5" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CVn-0r-p7e" id="KGz-I1-Han">
@@ -483,14 +483,14 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Rating" id="6Vf-MV-ioQ">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="60" id="coZ-4T-Whe">
+                                    <tableViewCell clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="60" id="coZ-4T-Whe">
                                         <rect key="frame" x="0.0" y="479.5" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="coZ-4T-Whe" id="mLt-Sg-nEj">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="coZ-4T-Whe" id="mLt-Sg-nEj">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v4i-ST-RNb" customClass="CosmosView" customModule="Beer_tracker" customModuleProvider="target">
+                                                <view multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v4i-ST-RNb" customClass="CosmosView" customModule="Beer_tracker" customModuleProvider="target">
                                                     <rect key="frame" x="16" y="11" width="343" height="38"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <userDefinedRuntimeAttributes>
@@ -516,6 +516,30 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection headerTitle="Location" id="hLj-nC-IEX">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="5l8-c2-O4z" style="IBUITableViewCellStyleDefault" id="tqj-fc-TWd">
+                                        <rect key="frame" x="0.0" y="595.5" width="375" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tqj-fc-TWd" id="b5p-OS-3CB">
+                                            <rect key="frame" x="0.0" y="0.0" width="341" height="49.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Add location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5l8-c2-O4z">
+                                                    <rect key="frame" x="16" y="0.0" width="324" height="49.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="yj7-Bx-aG6" kind="show" identifier="showMap" id="PqK-Ze-JbP"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="TSe-Nh-Y3j" id="cXv-RO-m5Y"/>
@@ -526,7 +550,6 @@
                         <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="save" id="L4E-jr-Ps7">
                             <connections>
                                 <action selector="save" destination="TSe-Nh-Y3j" id="HKc-nW-uwU"/>
-                                <segue destination="Gjw-Z0-woe" kind="unwind" identifier="beerEditedOrAdded" unwindAction="unwindFromAddBeer:" id="Dk3-u6-OuV"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -536,14 +559,63 @@
                         <outlet property="color" destination="L3i-8q-gcq" id="asE-vu-pGS"/>
                         <outlet property="name" destination="Skm-CC-zg1" id="Eci-6T-5dW"/>
                         <outlet property="rating" destination="v4i-ST-RNb" id="Bk6-Ps-Yr0"/>
-                        <outlet property="saveButton" destination="L4E-jr-Ps7" id="x69-yQ-Jd2"/>
+                        <outlet property="saveButton" destination="L4E-jr-Ps7" id="GkM-eX-OuX"/>
                         <segue destination="nrC-hK-xF3" kind="show" identifier="showDefault" id="dVX-Zh-9p3"/>
+                        <segue destination="Gjw-Z0-woe" kind="unwind" identifier="didAddBeer" unwindAction="unwindFromAddBeer:" id="0vD-f1-7x1"/>
+                        <segue destination="Gjw-Z0-woe" kind="unwind" identifier="didEditBeer" unwindAction="unwindFromEditBeer:" id="YT1-15-aKA"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5e3-WC-bil" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Gjw-Z0-woe" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4854" y="-1128"/>
+            <point key="canvasLocation" x="5191" y="-988"/>
+        </scene>
+        <!--Add location-->
+        <scene sceneID="Q71-Se-bKM">
+            <objects>
+                <viewController title="Add location" id="yj7-Bx-aG6" customClass="AddLocationViewController" customModule="Beer_tracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FwV-IN-W2O">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bNN-kY-7ou">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bNN-kY-7ou" firstAttribute="leading" secondItem="Ve2-ll-Y1d" secondAttribute="leading" id="F9d-pV-8cZ"/>
+                            <constraint firstItem="bNN-kY-7ou" firstAttribute="trailing" secondItem="Ve2-ll-Y1d" secondAttribute="trailing" id="UdN-Yq-UbE"/>
+                            <constraint firstItem="bNN-kY-7ou" firstAttribute="bottom" secondItem="Ve2-ll-Y1d" secondAttribute="bottom" id="jCb-ui-cz7"/>
+                            <constraint firstItem="bNN-kY-7ou" firstAttribute="top" secondItem="Ve2-ll-Y1d" secondAttribute="top" id="vxr-c6-iuJ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Ve2-ll-Y1d"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add location" id="1Gr-6W-5db">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="98A-bG-Kli">
+                            <connections>
+                                <action selector="done" destination="yj7-Bx-aG6" id="fdw-1r-PW1"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="mapView" destination="bNN-kY-7ou" id="uPs-hC-SVH"/>
+                        <outlet property="searchDisplayController" destination="3bz-A8-X66" id="JJU-0N-FkD"/>
+                        <segue destination="uvN-Cv-yWU" kind="unwind" identifier="didAddLocation" unwindAction="unwindFromAddLocation:" id="4xP-BB-1Za"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5vX-hH-X6w" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="uvN-Cv-yWU" userLabel="Exit" sceneMemberID="exit"/>
+                <searchDisplayController id="3bz-A8-X66">
+                    <connections>
+                        <outlet property="delegate" destination="yj7-Bx-aG6" id="299-AZ-bZI"/>
+                        <outlet property="searchContentsController" destination="yj7-Bx-aG6" id="nwU-1W-cMB"/>
+                        <outlet property="searchResultsDataSource" destination="yj7-Bx-aG6" id="una-IQ-7ru"/>
+                        <outlet property="searchResultsDelegate" destination="yj7-Bx-aG6" id="Gdc-yq-0u8"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="6144.8000000000002" y="-988.15592203898063"/>
         </scene>
         <!--Beers-->
         <scene sceneID="XNN-WZ-Pw5">
@@ -574,7 +646,7 @@
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8jc-N3-ni4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1375" y="-683"/>
+            <point key="canvasLocation" x="1497" y="-331"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="rFD-gp-vQ1">
@@ -593,7 +665,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hco-O8-ReY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-530" y="-304"/>
+            <point key="canvasLocation" x="-809" y="-331"/>
         </scene>
         <!--Profile-->
         <scene sceneID="vhk-C3-Q6A">
@@ -791,10 +863,10 @@
                                 <exclude reference="rlw-UL-RFr"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="Ycy-Im-V3U"/>
                                 <exclude reference="4QY-Hk-0qr"/>
                                 <exclude reference="XoM-Rm-UzV"/>
                                 <exclude reference="uXq-uv-d49"/>
+                                <exclude reference="Ycy-Im-V3U"/>
                                 <exclude reference="gQ0-jp-ZCu"/>
                                 <exclude reference="NeA-bE-X2T"/>
                                 <exclude reference="Hwz-nY-mi6"/>
@@ -807,10 +879,10 @@
                                 <include reference="rlw-UL-RFr"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="Ycy-Im-V3U"/>
                                 <include reference="4QY-Hk-0qr"/>
                                 <include reference="XoM-Rm-UzV"/>
                                 <include reference="uXq-uv-d49"/>
+                                <include reference="Ycy-Im-V3U"/>
                                 <include reference="gQ0-jp-ZCu"/>
                                 <include reference="Hwz-nY-mi6"/>
                                 <include reference="kLy-3R-Rw4"/>
@@ -833,7 +905,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fPd-Eo-6qc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-531.18440779610194" y="567.20000000000005"/>
+            <point key="canvasLocation" x="-809" y="555"/>
         </scene>
         <!--Beers-->
         <scene sceneID="r6S-J2-T9Y">
@@ -855,7 +927,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i8s-x4-q08" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2212" y="-1127"/>
+            <point key="canvasLocation" x="2473" y="-987"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="klP-Wy-k1X">
@@ -891,7 +963,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jMD-OI-v3k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2212" y="-357"/>
+            <point key="canvasLocation" x="2474" y="84"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="HHx-Wn-mDK">
@@ -905,12 +977,11 @@
                     <nil name="viewControllers"/>
                     <connections>
                         <segue destination="Qr5-4O-Xyj" kind="relationship" relationship="rootViewController" id="zpO-pG-6rX"/>
-                        <segue destination="Qr5-4O-Xyj" kind="push" id="ZTY-4F-lQl"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8rx-sZ-EED" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2995.1999999999998" y="-1899.8500749625189"/>
+            <point key="canvasLocation" x="3473" y="-1903"/>
         </scene>
     </scenes>
     <resources>
@@ -920,8 +991,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="dVX-Zh-9p3"/>
-        <segue reference="qs2-qD-FfS"/>
-        <segue reference="ujv-Nd-Ahb"/>
-        <segue reference="ZTY-4F-lQl"/>
+        <segue reference="rn6-RA-P6c"/>
+        <segue reference="1oj-hu-Hb6"/>
     </inferredMetricsTieBreakers>
 </document>

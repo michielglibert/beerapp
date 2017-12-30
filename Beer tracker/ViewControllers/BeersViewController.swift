@@ -29,8 +29,7 @@ class BeersViewController:UIViewController {
     
     @IBAction func unwindFromAddBeer(_ segue: UIStoryboardSegue) {
         switch segue.identifier {
-        //If beer was added wil refer to this controller, will refer to other controller for edited
-        case "beerEditedOrAdded"?:
+        case "didAddBeer"?:
             let addBeerViewController = segue.source as! AddBeerViewController
             beerService.addBeer(beer: addBeerViewController.beer!)
             beers = getBeersForView()

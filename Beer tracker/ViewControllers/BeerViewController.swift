@@ -53,10 +53,10 @@ class BeerViewController:UITableViewController {
         self.present(actions, animated: true, completion: nil)
     }
     
-    @IBAction func unwindFromAddBeer(_ segue: UIStoryboardSegue) {
+    @IBAction func unwindFromEditBeer(_ segue: UIStoryboardSegue) {
         switch segue.identifier {
         //If beer was edited wil refer to this controller, will refer to other controller for added
-        case "beerEditedOrAdded"?:
+        case "didEditBeer"?:
             let addBeerViewController = segue.source as! AddBeerViewController
             beer = addBeerViewController.beer
             updateView()

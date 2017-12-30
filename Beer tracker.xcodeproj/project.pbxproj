@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C71A1BC91FF7BDD700D41F2D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C71A1BC81FF7BDD700D41F2D /* MapKit.framework */; };
 		C72091C91FF18AD40026227B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72091C81FF18AD40026227B /* AppDelegate.swift */; };
 		C72091CE1FF18AD40026227B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C72091CC1FF18AD40026227B /* Main.storyboard */; };
 		C72091D01FF18AD40026227B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C72091CF1FF18AD40026227B /* Assets.xcassets */; };
@@ -15,6 +16,7 @@
 		C72091E01FF1913D0026227B /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72091DF1FF1913D0026227B /* Location.swift */; };
 		C74C92421FF4651700E1ED34 /* CosmosDistrib.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74C92411FF4651700E1ED34 /* CosmosDistrib.swift */; };
 		C74C92461FF472A100E1ED34 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74C92451FF472A100E1ED34 /* ProfileViewController.swift */; };
+		C799CFFE1FF7D7D800907332 /* AddLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C799CFFD1FF7D7D800907332 /* AddLocationViewController.swift */; };
 		C7D348CA1FF543A900874E79 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D348C91FF543A900874E79 /* UserService.swift */; };
 		C7D859CB1FF2C32F00A4C1B2 /* BeersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D859CA1FF2C32F00A4C1B2 /* BeersViewController.swift */; };
 		C7D859CD1FF2C42900A4C1B2 /* BeerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D859CC1FF2C42900A4C1B2 /* BeerCell.swift */; };
@@ -28,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C71A1BC81FF7BDD700D41F2D /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		C72091C51FF18AD30026227B /* Beer tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Beer tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C72091C81FF18AD40026227B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C72091CD1FF18AD40026227B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -38,6 +41,7 @@
 		C72091DF1FF1913D0026227B /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		C74C92411FF4651700E1ED34 /* CosmosDistrib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmosDistrib.swift; sourceTree = "<group>"; };
 		C74C92451FF472A100E1ED34 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		C799CFFD1FF7D7D800907332 /* AddLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLocationViewController.swift; sourceTree = "<group>"; };
 		C7D348C91FF543A900874E79 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		C7D859CA1FF2C32F00A4C1B2 /* BeersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeersViewController.swift; sourceTree = "<group>"; };
 		C7D859CC1FF2C42900A4C1B2 /* BeerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerCell.swift; sourceTree = "<group>"; };
@@ -55,17 +59,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C71A1BC91FF7BDD700D41F2D /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C71A1BC71FF7BDD700D41F2D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C71A1BC81FF7BDD700D41F2D /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C72091BC1FF18AD30026227B = {
 			isa = PBXGroup;
 			children = (
 				C72091C71FF18AD30026227B /* Beer tracker */,
 				C72091C61FF18AD30026227B /* Products */,
+				C71A1BC71FF7BDD700D41F2D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -121,6 +135,7 @@
 				C7DE1D251FF4007B005B202A /* BeerViewController.swift */,
 				C7E039C01FF4229C00D9175F /* PrimarySplitViewController.swift */,
 				C74C92451FF472A100E1ED34 /* ProfileViewController.swift */,
+				C799CFFD1FF7D7D800907332 /* AddLocationViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -168,6 +183,11 @@
 					C72091C41FF18AD30026227B = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -218,6 +238,7 @@
 				C7DE1D221FF3AC93005B202A /* AddBeerViewController.swift in Sources */,
 				C72091DE1FF191280026227B /* Beer.swift in Sources */,
 				C72091E01FF1913D0026227B /* Location.swift in Sources */,
+				C799CFFE1FF7D7D800907332 /* AddLocationViewController.swift in Sources */,
 				C7FA6F8A1FF53C41004F8E13 /* BeerService.swift in Sources */,
 				C72091C91FF18AD40026227B /* AppDelegate.swift in Sources */,
 				C7DE1D241FF3EF77005B202A /* Color.swift in Sources */,

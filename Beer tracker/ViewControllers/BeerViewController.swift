@@ -1,4 +1,5 @@
 import UIKit
+import MapKit
 
 class BeerViewController:UITableViewController {
     @IBOutlet weak var brewer:UILabel!
@@ -7,6 +8,7 @@ class BeerViewController:UITableViewController {
     @IBOutlet weak var rating:CosmosView!
     @IBOutlet weak var favorite:UISwitch!
     @IBOutlet weak var date:UILabel!
+    @IBOutlet weak var mapView:MKMapView!
     
     var beer:Beer!
     let beerService = BeerService()
@@ -22,6 +24,19 @@ class BeerViewController:UITableViewController {
         updateView()
         rating.settings.updateOnTouch = false
         favorite.addTarget(self, action: #selector(switchChanged), for: UIControlEvents.valueChanged)
+        
+        if beer.location != nil {
+            //Add the annotation
+            let annotation = MKPointAnnotation()
+            annotation.coordinate = CLLocationCoordinate2DMake((beer.location?.latitude)!, (beer.location?.longitude)!)
+            annotation.title = beer.location?.name
+            mapView.addAnnotation(annotation)
+            
+            //Set the region
+            let span = MKCoordinateSpanMake(0.05, 0.05)
+            let region = MKCoordinateRegion(center: annotation.coordinate, span: span)
+            mapView.setRegion(region, animated: true)
+        }
     }
     
     @objc func switchChanged(mySwitch: UISwitch) {

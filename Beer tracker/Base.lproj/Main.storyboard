@@ -39,10 +39,10 @@
             </objects>
             <point key="canvasLocation" x="3473" y="83"/>
         </scene>
-        <!--Beer View Controller-->
+        <!--Beer-->
         <scene sceneID="d2Y-vG-HwF">
             <objects>
-                <tableViewController id="Qr5-4O-Xyj" customClass="BeerViewController" customModule="Beer_tracker" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Beer" id="Qr5-4O-Xyj" customClass="BeerViewController" customModule="Beer_tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" allowsSelection="NO" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="Xux-iw-l8Y">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -253,6 +253,29 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection headerTitle="Location" id="ATL-R8-aoa">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="200" id="HpZ-NM-NfA">
+                                        <rect key="frame" x="0.0" y="391" width="375" height="200"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HpZ-NM-NfA" id="1XK-b6-lbz">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="199.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" scrollEnabled="NO" rotateEnabled="NO" pitchEnabled="NO" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fxm-lX-z8J">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="199.5"/>
+                                                </mapView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Fxm-lX-z8J" firstAttribute="top" secondItem="1XK-b6-lbz" secondAttribute="top" id="Ux9-hs-Ym2"/>
+                                                <constraint firstAttribute="trailing" secondItem="Fxm-lX-z8J" secondAttribute="trailing" id="bov-MC-Vg4"/>
+                                                <constraint firstItem="Fxm-lX-z8J" firstAttribute="leading" secondItem="1XK-b6-lbz" secondAttribute="leading" id="drV-FY-AS1"/>
+                                                <constraint firstAttribute="bottom" secondItem="Fxm-lX-z8J" secondAttribute="bottom" id="i9f-hb-CUI"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="Qr5-4O-Xyj" id="zEi-Kz-pqZ"/>
@@ -272,6 +295,7 @@
                         <outlet property="color" destination="PhI-4D-4fN" id="rqT-wS-rfO"/>
                         <outlet property="date" destination="gy0-Fm-INb" id="c9g-lW-gFI"/>
                         <outlet property="favorite" destination="EbV-TE-Vqy" id="8WQ-dp-y1r"/>
+                        <outlet property="mapView" destination="Fxm-lX-z8J" id="CpS-TI-9Q3"/>
                         <outlet property="rating" destination="qQy-rf-32C" id="pWW-lP-9to"/>
                         <segue destination="Qt8-tP-n0n" kind="unwind" identifier="didRemoveBeer" unwindAction="unwindFromBeer:" id="XZt-Tq-rPa"/>
                         <segue destination="TSe-Nh-Y3j" kind="show" identifier="editBeer" id="ujv-Nd-Ahb"/>
@@ -992,6 +1016,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="dVX-Zh-9p3"/>
         <segue reference="rn6-RA-P6c"/>
-        <segue reference="1oj-hu-Hb6"/>
+        <segue reference="ujv-Nd-Ahb"/>
     </inferredMetricsTieBreakers>
 </document>

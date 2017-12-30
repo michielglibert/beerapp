@@ -81,6 +81,7 @@ class AddBeerViewController:UITableViewController {
     }
     
     //Adds toolbar to picker
+    //Source: https://www.youtube.com/watch?v=HkDDGfMiuOA
     func createToolbar() {
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
@@ -147,6 +148,7 @@ extension AddBeerViewController: UITextFieldDelegate {
     }
     
     //Makes it so the textfield with tag 2 only allows numbers as input
+    //source: https://stackoverflow.com/questions/30973044/how-to-restrict-uitextfield-to-take-only-numbers-in-swift
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool
     {
         if textField.tag == 2 {

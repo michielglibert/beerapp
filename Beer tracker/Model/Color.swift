@@ -1,6 +1,6 @@
 enum Color: String {
-    case blond = "Blond"
-    case blondbrown = "Blond/Brown"
+    case blond = "Blonde"
+    case blondbrown = "Blonde/Brown"
     case brown = "Brown"
 }
 

@@ -132,11 +132,3 @@ extension BeersViewController: UISearchBarDelegate {
         searchBar.endEditing(true)
     }
 }
-
-extension BeersViewController: UISplitViewControllerDelegate {
-    //Method so the view controller only collapses if there is no detail shown
-    func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
-        let isShowingBeers = (secondaryViewController as? UINavigationController)?.topViewController is BeersViewController
-        return !isShowingBeers
-    }
-}

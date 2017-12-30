@@ -29,7 +29,7 @@ class BeerViewController:UITableViewController {
     }
     
     @IBAction func onEditClick() {
-        let actionSheet = UIAlertController(title: beer.name, message: "What do you want to do", preferredStyle: UIAlertControllerStyle.actionSheet)
+        let actions = UIAlertController(title: beer.name, message: "What do you want to do", preferredStyle: UIAlertControllerStyle.actionSheet)
         
         let editAction = UIAlertAction(title: "Edit", style: UIAlertActionStyle.default) { (ACTION) in
             self.performSegue(withIdentifier: "editBeer", sender: nil)
@@ -43,14 +43,14 @@ class BeerViewController:UITableViewController {
             
         }
         
-        actionSheet.addAction(editAction)
-        actionSheet.addAction(removeAction)
-        actionSheet.addAction(cancelAction)
+        actions.addAction(editAction)
+        actions.addAction(removeAction)
+        actions.addAction(cancelAction)
         
         //Ipad support
-        actionSheet.popoverPresentationController?.barButtonItem = self.navigationItem.rightBarButtonItem
+        actions.popoverPresentationController?.barButtonItem = self.navigationItem.rightBarButtonItem
         
-        self.present(actionSheet, animated: true, completion: nil)
+        self.present(actions, animated: true, completion: nil)
     }
     
     @IBAction func unwindFromAddBeer(_ segue: UIStoryboardSegue) {

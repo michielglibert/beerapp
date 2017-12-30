@@ -34,9 +34,19 @@ class AddBeerViewController:UITableViewController {
         collection.forEach { field in
             field?.delegate = self
             field?.tag = counter
-            name.returnKeyType = .next
+            field?.returnKeyType = .next
             counter = counter + 1
         }
+        
+        
+        //Source: https://stackoverflow.com/questions/24126678/close-ios-keyboard-by-touching-anywhere-using-swift
+        //Looks for single or multiple taps.
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(AddBeerViewController.dismissKeyboard))
+        
+        //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
+        //tap.cancelsTouchesInView = false
+        
+        view.addGestureRecognizer(tap)
         
         createBeerPicker()
         createToolbar()

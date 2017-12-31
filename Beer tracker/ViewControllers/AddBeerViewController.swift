@@ -100,6 +100,7 @@ class AddBeerViewController:UITableViewController {
             beer?.brewer = brewer.text!
             beer?.color = Color(rawValue: color.text!)!
             beer?.alcoholPercentage = Double(alcoholPercentage.text!)!
+            beer?.location = location
             break
         case "showMap"?:
             break

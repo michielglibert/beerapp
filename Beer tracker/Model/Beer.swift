@@ -20,5 +20,10 @@ class Beer {
         self.alcoholPercentage = alcoholPercentage
         self.dateAdded = Date()
     }
+    
+    convenience init(name: String, rating:Int, favorite:Bool, brewer: String, color: Color, alcoholPercentage: Double, location: Location) {
+        self.init(name: name, rating: rating, favorite: favorite, brewer: brewer, color: color, alcoholPercentage: alcoholPercentage)
+        self.location = location
+    }
 }
 

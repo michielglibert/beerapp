@@ -19,8 +19,6 @@ class BeersViewController:UIViewController {
             self.navigationItem.rightBarButtonItems = nil
         }
         
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {

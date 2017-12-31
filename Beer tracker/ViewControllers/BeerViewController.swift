@@ -24,19 +24,6 @@ class BeerViewController:UITableViewController {
         updateView()
         rating.settings.updateOnTouch = false
         favorite.addTarget(self, action: #selector(switchChanged), for: UIControlEvents.valueChanged)
-        
-        if beer.location != nil {
-            //Add the annotation
-            let annotation = MKPointAnnotation()
-            annotation.coordinate = CLLocationCoordinate2DMake((beer.location?.latitude)!, (beer.location?.longitude)!)
-            annotation.title = beer.location?.name
-            mapView.addAnnotation(annotation)
-            
-            //Set the region
-            let span = MKCoordinateSpanMake(0.05, 0.05)
-            let region = MKCoordinateRegion(center: annotation.coordinate, span: span)
-            mapView.setRegion(region, animated: true)
-        }
     }
     
     @objc func switchChanged(mySwitch: UISwitch) {
@@ -90,6 +77,22 @@ class BeerViewController:UITableViewController {
         formatter.dateFormat = "dd-MM-yyyy"
         favorite.isOn = beer.favorite
         date.text = formatter.string(from: beer.dateAdded)
+        
+        if beer.location != nil {
+            //Remove all annotations
+            mapView.removeAnnotations(mapView.annotations)
+            
+            //Add the annotation
+            let annotation = MKPointAnnotation()
+            annotation.coordinate = CLLocationCoordinate2DMake((beer.location?.latitude)!, (beer.location?.longitude)!)
+            annotation.title = beer.location?.name
+            mapView.addAnnotation(annotation)
+            
+            //Set the region
+            let span = MKCoordinateSpanMake(0.05, 0.05)
+            let region = MKCoordinateRegion(center: annotation.coordinate, span: span)
+            mapView.setRegion(region, animated: true)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

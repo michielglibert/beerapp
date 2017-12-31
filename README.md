@@ -21,6 +21,7 @@ This app was made for a school project to show my skills. A quick overview of wh
 * Basic actions for a beer: view, add, edit and delete
 * MVC pattern used
 * Delegation
+* CoreLocation and MapKit
 
 
 

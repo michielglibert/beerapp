@@ -18,6 +18,9 @@ class BeersViewController:UIViewController {
             //Makes sure that the add button is removed
             self.navigationItem.rightBarButtonItems = nil
         }
+        
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -81,6 +84,7 @@ class BeersViewController:UIViewController {
             fatalError("Unknown identifier")
         }
     }
+    
 }
 
 extension BeersViewController: UITableViewDataSource {
@@ -114,12 +118,12 @@ extension BeersViewController: UISearchBarDelegate {
     }
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        searchBar.showsCancelButton = true
+        searchBar.setShowsCancelButton(true, animated: true)
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.text = ""
-        searchBar.showsCancelButton = false
+        searchBar.setShowsCancelButton(false, animated: true)
         searchBar.endEditing(true)
         
         beers = getBeersForView()
@@ -127,7 +131,7 @@ extension BeersViewController: UISearchBarDelegate {
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.showsCancelButton = false
+        searchBar.setShowsCancelButton(false, animated: true)
         searchBar.endEditing(true)
     }
 }

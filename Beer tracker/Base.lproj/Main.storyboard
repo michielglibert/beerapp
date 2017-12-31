@@ -262,7 +262,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="199.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" scrollEnabled="NO" rotateEnabled="NO" pitchEnabled="NO" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fxm-lX-z8J">
+                                                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" zoomEnabled="NO" scrollEnabled="NO" rotateEnabled="NO" pitchEnabled="NO" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fxm-lX-z8J">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="199.5"/>
                                                 </mapView>
                                             </subviews>
@@ -317,6 +317,7 @@
                         <searchBar key="tableHeaderView" contentMode="redraw" id="0Nw-eK-4VH">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <color key="barTintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             <textInputTraits key="textInputTraits"/>
                             <connections>
                                 <outlet property="delegate" destination="x2p-iu-XBs" id="fYb-Ft-KI6"/>
@@ -585,8 +586,8 @@
                         <outlet property="rating" destination="v4i-ST-RNb" id="Bk6-Ps-Yr0"/>
                         <outlet property="saveButton" destination="L4E-jr-Ps7" id="GkM-eX-OuX"/>
                         <segue destination="nrC-hK-xF3" kind="show" identifier="showDefault" id="dVX-Zh-9p3"/>
-                        <segue destination="Gjw-Z0-woe" kind="unwind" identifier="didAddBeer" unwindAction="unwindFromAddBeer:" id="0vD-f1-7x1"/>
                         <segue destination="Gjw-Z0-woe" kind="unwind" identifier="didEditBeer" unwindAction="unwindFromEditBeer:" id="YT1-15-aKA"/>
+                        <segue destination="Gjw-Z0-woe" kind="unwind" identifier="didAddBeer" unwindAction="unwindFromAddBeer:" id="8wB-sH-HMM"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5e3-WC-bil" userLabel="First Responder" sceneMemberID="firstResponder"/>

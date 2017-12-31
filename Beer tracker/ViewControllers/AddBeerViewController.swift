@@ -68,8 +68,9 @@ class AddBeerViewController:UITableViewController {
                 alert.addAction(cancel)
             
                 self.present(alert, animated: true, completion: nil)
-            }
-            addBeer()
+            } else {
+                addBeer()
+            }            
         } else {
             performSegue(withIdentifier: "didEditBeer", sender: self)
         }
@@ -88,7 +89,7 @@ class AddBeerViewController:UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
         case "didAddBeer"?:
-            beer = Beer(name: name.text!, rating: Int(rating.rating), favorite: false, brewer: brewer.text!, color: Color(rawValue: color.text!)!, alcoholPercentage: Double(alcoholPercentage.text!)!)
+            beer = Beer(name: self.name.text!, rating: Int(rating.rating), favorite: false, brewer: self.brewer.text!, color: Color(rawValue: self.color.text!)!, alcoholPercentage: Double(self.alcoholPercentage.text!)!)
             if location != nil {
                 beer?.location = location
             }

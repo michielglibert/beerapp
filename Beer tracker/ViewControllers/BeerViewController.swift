@@ -15,7 +15,7 @@ class BeerViewController:UITableViewController {
     let formatter = DateFormatter()
     
     override func viewDidAppear(_ animated: Bool) {
-        //If the person select the same beer on favorites and beers tab this makes sure that
+        //If the person selects the same beer on favorites and beers tab this makes sure that
         //everything gets updated
         updateView()
     }
@@ -49,7 +49,7 @@ class BeerViewController:UITableViewController {
         actions.addAction(removeAction)
         actions.addAction(cancelAction)
         
-        //Ipad support
+        //Ipad support for actionsheet
         actions.popoverPresentationController?.barButtonItem = self.navigationItem.rightBarButtonItem
         
         self.present(actions, animated: true, completion: nil)
@@ -57,7 +57,6 @@ class BeerViewController:UITableViewController {
     
     @IBAction func unwindFromEditBeer(_ segue: UIStoryboardSegue) {
         switch segue.identifier {
-        //If beer was edited wil refer to this controller, will refer to other controller for added
         case "didEditBeer"?:
             let addBeerViewController = segue.source as! AddBeerViewController
             beer = addBeerViewController.beer
@@ -107,6 +106,5 @@ class BeerViewController:UITableViewController {
             fatalError("Unknown segue")
         }
     }
-    
     
 }

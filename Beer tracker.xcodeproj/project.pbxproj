@@ -10,7 +10,6 @@
 		C71A1BC91FF7BDD700D41F2D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C71A1BC81FF7BDD700D41F2D /* MapKit.framework */; };
 		C72091C91FF18AD40026227B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72091C81FF18AD40026227B /* AppDelegate.swift */; };
 		C72091CE1FF18AD40026227B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C72091CC1FF18AD40026227B /* Main.storyboard */; };
-		C72091D01FF18AD40026227B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C72091CF1FF18AD40026227B /* Assets.xcassets */; };
 		C72091D31FF18AD40026227B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C72091D11FF18AD40026227B /* LaunchScreen.storyboard */; };
 		C72091DE1FF191280026227B /* Beer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72091DD1FF191280026227B /* Beer.swift */; };
 		C72091E01FF1913D0026227B /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72091DF1FF1913D0026227B /* Location.swift */; };
@@ -23,7 +22,7 @@
 		C7DE1D241FF3EF77005B202A /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DE1D231FF3EF77005B202A /* Color.swift */; };
 		C7DE1D261FF4007B005B202A /* BeerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DE1D251FF4007B005B202A /* BeerViewController.swift */; };
 		C7E039C11FF4229C00D9175F /* PrimarySplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E039C01FF4229C00D9175F /* PrimarySplitViewController.swift */; };
-		C7F94AEF1FF2B75400A7542A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F94AEE1FF2B75400A7542A /* User.swift */; };
+		C7F2E7C31FF94B8300B110F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7F2E7C21FF94B8300B110F4 /* Assets.xcassets */; };
 		C7FA6F8A1FF53C41004F8E13 /* BeerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FA6F891FF53C41004F8E13 /* BeerService.swift */; };
 		C7FA6F8C1FF53C5B004F8E13 /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FA6F8B1FF53C5B004F8E13 /* DummyData.swift */; };
 /* End PBXBuildFile section */
@@ -33,7 +32,6 @@
 		C72091C51FF18AD30026227B /* Beer tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Beer tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C72091C81FF18AD40026227B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C72091CD1FF18AD40026227B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		C72091CF1FF18AD40026227B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C72091D21FF18AD40026227B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C72091D41FF18AD40026227B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C72091DD1FF191280026227B /* Beer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Beer.swift; sourceTree = "<group>"; };
@@ -47,7 +45,7 @@
 		C7DE1D231FF3EF77005B202A /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		C7DE1D251FF4007B005B202A /* BeerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerViewController.swift; sourceTree = "<group>"; };
 		C7E039C01FF4229C00D9175F /* PrimarySplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimarySplitViewController.swift; sourceTree = "<group>"; };
-		C7F94AEE1FF2B75400A7542A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		C7F2E7C21FF94B8300B110F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C7FA6F891FF53C41004F8E13 /* BeerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerService.swift; sourceTree = "<group>"; };
 		C7FA6F8B1FF53C5B004F8E13 /* DummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -98,7 +96,7 @@
 				C72091DA1FF18DC40026227B /* Model */,
 				C72091C81FF18AD40026227B /* AppDelegate.swift */,
 				C72091CC1FF18AD40026227B /* Main.storyboard */,
-				C72091CF1FF18AD40026227B /* Assets.xcassets */,
+				C7F2E7C21FF94B8300B110F4 /* Assets.xcassets */,
 				C72091D11FF18AD40026227B /* LaunchScreen.storyboard */,
 				C72091D41FF18AD40026227B /* Info.plist */,
 			);
@@ -110,7 +108,6 @@
 			children = (
 				C72091DD1FF191280026227B /* Beer.swift */,
 				C72091DF1FF1913D0026227B /* Location.swift */,
-				C7F94AEE1FF2B75400A7542A /* User.swift */,
 				C7DE1D231FF3EF77005B202A /* Color.swift */,
 			);
 			path = Model;
@@ -212,7 +209,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C72091D31FF18AD40026227B /* LaunchScreen.storyboard in Resources */,
-				C72091D01FF18AD40026227B /* Assets.xcassets in Resources */,
+				C7F2E7C31FF94B8300B110F4 /* Assets.xcassets in Resources */,
 				C72091CE1FF18AD40026227B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -228,7 +225,6 @@
 				C7DE1D261FF4007B005B202A /* BeerViewController.swift in Sources */,
 				C7E039C11FF4229C00D9175F /* PrimarySplitViewController.swift in Sources */,
 				C74C92461FF472A100E1ED34 /* ProfileViewController.swift in Sources */,
-				C7F94AEF1FF2B75400A7542A /* User.swift in Sources */,
 				C7D859CD1FF2C42900A4C1B2 /* BeerCell.swift in Sources */,
 				C7D859CB1FF2C32F00A4C1B2 /* BeersViewController.swift in Sources */,
 				C7DE1D221FF3AC93005B202A /* AddBeerViewController.swift in Sources */,

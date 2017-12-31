@@ -1,6 +1,6 @@
 class Location {
-    var name:String
-    var latitude:Double
+    var name: String
+    var latitude: Double
     var longitude: Double
     
     init(name: String, latitude: Double, longitude: Double) {

@@ -1,5 +1,6 @@
 import UIKit
 
+//This view is mainly used to show size classes and auto layout
 class ProfileViewController:UIViewController {
     @IBOutlet weak var beerAmount:UILabel!
     @IBOutlet weak var favoriteAmount:UILabel!

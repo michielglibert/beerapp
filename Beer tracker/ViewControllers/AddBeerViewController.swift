@@ -39,7 +39,6 @@ class AddBeerViewController:UITableViewController {
             counter = counter + 1
         }
         
-        
         //Source: https://stackoverflow.com/questions/24126678/close-ios-keyboard-by-touching-anywhere-using-swift
         //Looks for single or multiple taps.
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(AddBeerViewController.dismissKeyboard))
@@ -73,6 +72,25 @@ class AddBeerViewController:UITableViewController {
             }            
         } else {
             performSegue(withIdentifier: "didEditBeer", sender: self)
+        }
+    }
+    
+    //When color is tapped the textfield shows it's initial value
+    @IBAction func showText() {
+        color.text = Color.blond.rawValue
+    }
+    
+    @IBAction func unwindFromAddLocation(_ segue: UIStoryboardSegue) {
+        switch segue.identifier {
+        case "didAddLocation"?:
+            let addLocationViewController = segue.source as! AddLocationViewController
+            location = addLocationViewController.location
+            let indexPath = IndexPath(row: 0, section: 5)
+            let cell = tableView.cellForRow(at: indexPath)
+            cell?.textLabel?.text = location?.name
+            break
+        default:
+            fatalError("Unknown segue")
         }
     }
     
@@ -117,11 +135,6 @@ class AddBeerViewController:UITableViewController {
         color.inputView = colorPicker
     }
     
-    //When tapped the textfield shows it's initial value
-    @IBAction func showText() {
-        color.text = Color.blond.rawValue
-    }
-    
     //Adds toolbar to picker
     //Source: https://www.youtube.com/watch?v=HkDDGfMiuOA
     func createToolbar() {
@@ -139,20 +152,6 @@ class AddBeerViewController:UITableViewController {
     
     @objc func dismissKeyboard() {
         view.endEditing(true)
-    }
-    
-    @IBAction func unwindFromAddLocation(_ segue: UIStoryboardSegue) {
-        switch segue.identifier {
-        case "didAddLocation"?:
-            let addLocationViewController = segue.source as! AddLocationViewController
-            location = addLocationViewController.location
-            let indexPath = IndexPath(row: 0, section: 5)
-            let cell = tableView.cellForRow(at: indexPath)
-            cell?.textLabel?.text = location?.name
-            break
-        default:
-            fatalError("Unknown segue")
-        }
     }
     
 }
@@ -175,16 +174,6 @@ extension AddBeerViewController: UIPickerViewDataSource, UIPickerViewDelegate {
         color.text = selectedColor?.rawValue
     }
     
-    func validate() {
-        if name.text!.count > 0 && brewer.text!.count > 0 && alcoholPercentage.text!.count > 0 && color.text!.count > 0 {
-            saveButton.isEnabled = true
-        } else {
-            saveButton.isEnabled = false
-        }
-        
-    }
-    
-    
 }
 
 extension AddBeerViewController: UITextFieldDelegate {
@@ -203,6 +192,15 @@ extension AddBeerViewController: UITextFieldDelegate {
         validate()
     }
     
+    func validate() {
+        if name.text!.count > 0 && brewer.text!.count > 0 && alcoholPercentage.text!.count > 0 && color.text!.count > 0 {
+            saveButton.isEnabled = true
+        } else {
+            saveButton.isEnabled = false
+        }
+        
+    }
+    
     //Makes it so the textfield with tag 2 only allows numbers as input
     //source: https://stackoverflow.com/questions/30973044/how-to-restrict-uitextfield-to-take-only-numbers-in-swift
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool
@@ -215,4 +213,5 @@ extension AddBeerViewController: UITextFieldDelegate {
         
         return true
     }
+
 }

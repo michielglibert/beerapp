@@ -5,11 +5,11 @@ class Beer {
     var name: String
     var rating: Int
     var favorite: Bool
-    var brewer:String
-    var color:Color
-    var alcoholPercentage:Double
-    var dateAdded:Date
-    var location:Location?
+    var brewer: String
+    var color: Color
+    var alcoholPercentage: Double
+    var dateAdded: Date
+    var location: Location?
     
     init(name: String, rating:Int, favorite:Bool, brewer: String, color: Color, alcoholPercentage: Double) {
         self.name = name

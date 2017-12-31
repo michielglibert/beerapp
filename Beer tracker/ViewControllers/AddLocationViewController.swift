@@ -8,7 +8,18 @@ class AddLocationViewController:UIViewController {
     let currentLocation = MKPointAnnotation()
     let locationManager = CLLocationManager()
     
-    var location:Location?
+    var location:Location?    
+    
+    override func viewDidLoad() {
+        //Ask for location authorization
+        locationManager.requestWhenInUseAuthorization()
+        
+        //If enabled, delegate and update location
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.startUpdatingLocation()
+        }
+    }
     
     @IBAction func done() {
         let alert = UIAlertController(title: "Add location", message: "Give a name to your location", preferredStyle: .alert)
@@ -30,28 +41,7 @@ class AddLocationViewController:UIViewController {
         
         self.present(alert, animated: true, completion: nil)
     }
-    
-    override func viewDidLoad() {
-        //Ask for location authorization
-        locationManager.requestWhenInUseAuthorization()
-        
-        //If enabled, delegate and update location
-        if CLLocationManager.locationServicesEnabled() {
-            locationManager.delegate = self
-            locationManager.startUpdatingLocation()
-        }
-        /*
-        annotation.coordinate = (locationManager.location?.coordinate)!
-        /*annotation.coordinate = CLLocationCoordinate2D(latitude: 51.112622, longitude: 3.716439)
-        */annotation.title = "Place"
-        annotation.subtitle = "The place"
-        mapView.addAnnotation(annotation)
-        var region = MKCoordinateRegion()
-        region.center = annotation.coordinate
-        region.span.latitudeDelta = 0.02
-        region.span.longitudeDelta = 0.02
-        mapView.setRegion(region, animated: true)*/
-    }
+
 }
 
 extension AddLocationViewController:CLLocationManagerDelegate {

@@ -23,5 +23,6 @@ This app was made for a school project to show my skills. A quick overview of wh
 * Delegation
 * CoreLocation and MapKit
 
-
+## Author
+Michiel Glibert (https://github.com/michielglibert)
 
